@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>基本数据类型</title>
+</head>
+<body>
+    <script>
+        // 基本数据类型之number
+        // number: 有效数字 0、1、-1、-1.5、1.5  
+                    // NaN（not a number）
+        // NaN和任何值都不相等（包括自己）
+        // 把其他值转换为number：Number(1)
+        // 1、把字符串转为数字
+        // 规律：只要字符串中出现了非有效数字，那么结果就是NaN（第一位小数点不算）
+        // 空字符串转数字是0
+        // console.log( Number('1a') );
+        // console.log(Number('1.5px')) // NaN
+        // console.log(Number('1.8')) // 1.8
+        // console.log(Number(''))  // 0
+        // console.log(Number('   ')) // 0
+        // console.log(Number('true')) // NaN
+
+        // 把布尔值转换为数字
+        // console.log(Number(true)); // 1
+        // console.log(Number(false)); // 0
+
+        // null和undefined
+        // console.log(Number(null)); // 0
+        // console.log(Number(undefined)) // NaN
+
+        // NaN转数字
+        // console.log(Number(NaN)) // NaN
+   
+        // 引用数据类型转数字
+        // 普通对象、数组转数字，是先把对象或者数组转为字符串，然后在转数字
+        // console.log(Number({name:'xxx'}))
+        // console.log(({}).toString()); // '[object Object]'
+        // console.log(Number({}))
+
+        //数组转数字
+        // 数组转字符串就把外层的[]去掉，然后那里面的内容加上字符串
+        // 空数组转字符串是 ''
+        // console.log(Number([12, 23])) // NaN
+        // console.log([12, 23].toString()) // '12,23'
+        // console.log(Number([])); // 0
+        // console.log([].toString()) // ''
+    // isNaN 他会检测数据类型值是不是非有效数字，如果是就是true，反之就是false
+    // 在检测数据类型的时候，如果发现数据类型不是number类型的，要把它先转换为数字，在判断
+
+    // 用它检测有效数字返回时false
+        console.log(isNaN('12'))
+    
+    // 
+    </script>
+</body>
+</html>
