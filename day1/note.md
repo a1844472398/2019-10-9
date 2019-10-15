@@ -81,7 +81,7 @@
 
  #### 把布尔转换为数字
     - Number(true)=> 1
-    - Number(false)=> 0
+    - Number(false)=> 01
  #### 把null和undefined转换为数字
     - Number(null) // 0
     - Number(undefined) // NaN
@@ -93,4 +93,3 @@
  > isNaN 他会检测数据类型值是不是非有效数字，如果是就是true，反之就是false
 
  > 在使用isNaN的时候，如果发现检测的值的数据类型不是number类型的，要把它先转换为数字，在判断
-
