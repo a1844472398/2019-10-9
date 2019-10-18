@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 对象 == 对象 比较的空间地址（永远不相等）
+    // 对象 == 数字 对象转数字在比较
+    // 对象 == 字符串 把对象转换为字符串在比较
+    // 对象 == 布尔 他会把两边全部转数字在进行比较
+    // 数字 == 字符串 他会把字符串转数字进行比较
+    // 数字 == 布尔 把布尔转数字在进行比较
+    // 字符串 == 布尔 把两边全部转换为数字在进行比较
+
+    // null == undefined true
+    // null和其他值都不相等（undefined也是）
+
+    // console.log(({}) == ({})) // false
+    // console.log( ({}) == [] ) // false
+    // console.log( ({}) == NaN ) // false
+    // console.log( ({}) == 'px' ) // false
+    // console.log( ['12', '23'] == 123 ) // false
+    // console.log( ['12', '23']  == '12,23') // true
+    // console.log( ({}) == true ) // false
+    // console.log(89 == '89') // true
+    // console.log(0 == true) // false
+    // console.log('21' == true) // fasle
+    // console.log(null == undefined) // true
+    // console.log(null == 0) // false
+    // console.log(undefined == NaN) // fasle
+    // console.log(null == null) // true
+    // console.log(undefined == undefined) // true
+
+    // console.log(null != null) // false
+    // console.log(7 != 7) // false
+    // console.log('21' != true) // true
+    // console.log(21 === '21') // false
+    // console.log('21' !== 21) // true
+
+        // i++(先取值，后运算)
+        // let i =1;
+        // console.log(i++) //1
+        // console.log(i) // 2
+        // // i--(先取值，后运算)
+        // console.log(i--) // 2
+        // console.log(i) // 1
+
+       // ++i(先运算，后取值)
+    //    let i = 5 ;
+    //    console.log(++i) // 6
+    //    console.log(i) // 6
+
+    // // --i(先运算，后取值)
+    // console.log(--i) // 5
+
+    // num+=2自身加2，等价于num = num + 2
+    let num = 1;
+    num+=2; // num = num + 2
+    console.log(num) // 3
+
+    // num-=1自身减1，等价于num = num-1
+    num-=1 // num = num-1
+    console.log(num)
+       
+
+    </script>
+</body>
+</html>
