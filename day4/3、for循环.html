@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // - 创建循环的初始值
+        // - （设置）判断循环的执行的条件
+        // - 执行循环体中的内容
+        // - 当前轮循环结束，进行步长累计操作
+
+        //    for(var i=1;i<3;i++){
+        //        console.log(i) // 0  1 2 3
+        //    } 
+
+        //    console.log(i)
+        //    for(var i = 3;i>0;i--){
+        //        console.log(i) // 3 2 1
+        //    }
+        //    console.log(i)
+
+
+        //     for(var i =5;i>0;i-=2){
+        //         if(i<2){
+        //           i++
+        //         }
+        //         else{
+        //           i--
+        //         }
+        //     }
+        // console.log(i) // -1  -1
+
+        // for(var i =0;i<5;i++){
+        //     if(i === 0){
+        //         break;
+        //     }
+        //     console.log(i) // 0 1 2
+        // }
+        // console.log(i) // 3
+
+
+        //     for(var i =0;i<5;i++){
+
+        //     if(i === 3){
+        //         continue;
+        //     }
+        //     console.log(i) // 0 1 2 4
+        // }
+        // console.log(i) // 5
+
+        // for (var i = 0; i < 10; i++) {
+        //     if (i >= 2) {
+        //         i += 2;
+        //         continue;
+        //     }
+        //     if (i >= 6) {
+        //         i--;
+        //         break;
+        //     }
+        //     i++;
+        //     console.log(i) // 1
+        // }
+        // console.log(i) // 11
+
+        for (var i = 0; i < 10; i++) {
+            if (i === 2) {
+                i += 2;
+                continue;
+            }
+            if (i >= 6) {
+                i--;
+                break;
+            }
+            i++;
+            console.log(i) // 1 6
+        }
+        console.log(i) // 6
+        // 1 6 6
+        // 1 6 7
+        // 
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // - 检测的返回值一定是一个字符串
+    // - 字符串里放的是检测出来的数据类型
+    // - typeof null  =》'object'
+    // - 检测对象返回的都是'object'，不能够详细区分数组和普通对象
+
+    console.log(typeof '') // 'string'
+    console.log(typeof 44) // 'number'
+    console.log(typeof null) // 'object'
+    console.log(typeof undefined) // 'undefined'
+    console.log(typeof true) // 'boolean'
+    console.log(typeof ({})) // 'object'
+    console.log(typeof [])
+    console.log(typeof function(){}) // 'function'
+
+    typeof( typeof( typeof(NaN) ) ) // string
+    let ss = typeof( typeof( typeof( typeof( typeof(  typeof(  typeof( isNaN(undefined) ) ) ) ) ) ) ) // 'string'
+
+    console.log(ss)
+    </script>
+</body>
+</html>

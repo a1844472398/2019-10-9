@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    //    let sum = 10+10;
+    //    sum = sum*10/2
+    //    console.log(sum)
+    
+    //    let sum1 = 10+20;
+    //    sum1 = sum1*10/2
+    //    console.log(sum1)
+
+       // n和m是形参变量，可以有多个
+    //    function sum(n,m){
+    //         let num = n+m;
+    //         num = num*10/2;
+    //         console.log(num)
+    //    }
+
+    //    // 括号里放的是实参
+    //    sum(10, 10);
+    //    sum(10, 20);
+
+    // ==========函数的形参和实参
+
+    // 创建函数，实参没有给形参赋值，那形参就是undefined
+    //形参跟实参是一一对应的
+    //    function sum(n,m, x){
+    //        console.log(n, m, x)
+    //         let num = n+m;
+    //         num = num*10/2;
+    //         console.log(num)
+    //    }
+    //    sum();
+    //    sum(10);
+    //    sum('10', '10');
+    //    sum(10, 20, 30)
+
+    // ======= 函数的返回值
+    // 返回一个值给函数执行者
+    // 阻断代码向下运行
+
+    // function sum(n,m, x){
+    //     let num = n+m;
+    //     // console.log(num)
+    //     // return 返回的一定是个值
+    //     // 谁执行的函数返回值就给谁
+    //     return num
+    //     console.log(66666)
+    // }
+
+    // console.log( sum(10,20) )
+    // console.log( sum(40,40) )
+    // // let a = sum(10,20);
+    // // console.log(a)
+
+
+    // 出现undefined的情况
+    // 1、对象中，获取属性名对应的属性值不存在就是undefined；
+    // 2、函数中，没有给形参赋值，那在函数体中获取形参变量就是undefined
+    // 3、函数中没有返回值（return），那函数执行返回结果就是undefined
+    // 4、创建一个变量，没有赋值，那么获取这个变量是undefined
+
+    // let ss;
+    // console.log(ss)
+
+    (function(n){
+    console.log(n)
+    })(100)
+    </script> 
+</body>
+</html>

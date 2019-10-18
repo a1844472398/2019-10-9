@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点击显示详情</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .name {
+            background: palevioletred;
+            color: orangered;
+            font-size: 40px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .detail {
+            width: 600px;
+            margin: 0 auto;
+            /* display: none; */
+        }
+        img {
+            display: block;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div clss="box" id="box">
+        <div class="name" id="name">猪悟能</div>
+        <div class="detail" id="detail" style="display: none">
+            <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1571320014&di=2cc0e9d1adc8965b98ed57f2a064cd32&src=http://photocdn.sohu.com/20091011/Img267273002.jpg" alt="">
+        </div>
+    </div>
+
+    <script>
+        // 基于js实现业务逻辑，
+        // 1、想要操作谁，就获取谁
+        // 2、给操作的元素绑定相应的事件
+        // 3、在事件里写上你要做的逻辑
+
+
+        // 1、想要操作谁，就获取谁
+        // 在整个文档下，通过id获取页面中的元素对象
+        let name = document.getElementById('name');
+        let detail = document.getElementById('detail');
+        console.log(detail);
+        console.log(name);
+
+
+        // 2、给操作的元素绑定相应的事件
+        name.onclick = function(){
+
+            // 获取当前detail的display样式
+            let status = detail.style.display;
+
+            // 如果status是 'none'，那么现在图片就是隐藏状态，反之就是显示状态
+            if(status === 'none'){
+                // 如果是隐藏状态就把display改为 "block"
+                detail.style.display= "block";
+            }
+            else{
+                // 如果是显示状态就把display改为 "none"
+                detail.style.display= "none"; 
+            }
+        }
+
+    
+    </script>
+</body>
+</html>
