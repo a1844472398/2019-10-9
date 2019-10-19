@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //    var a = 'abc' + 123 + 456;
+        //   var b = '456' - '123';
+        //   var c = 100 + true + 21.2 + null + undefined + "Tencent" + [] + null + 9 + false; // 'NaNTencentnull9false'
+        //   let d = [] + []; // ''
+        //   let e = [] + {};'[]'
+        //   let f = 1 + true + null + [3.1415926] + '小花' + [] + null + undefined; // '23.1415926小花nullundefined'
+        //   let g = 3 - '1px';
+        //  console.log(a,b,c,d,f,g);
+
+
+
+        //  Number('') // 0
+        //  Number('-1') // -1
+        //  Number('23.2.2') //NaN
+        //  Number(null) // 0
+        //  Number('12px') // NAN
+        //  !parseInt('') // true
+        //  !!parseInt('12.5px') // true
+        //  parseFloat('12.5px') // 12.5
+        //  isNaN('') // flase
+        //  isNaN('12px') // true
+        //  isNaN(NaN) // true
+
+        //  let a = 12;
+        //   let b = a
+        //   console.log(b) // 12
+
+        // 1、把下面的程序改写成为三元运算符，并算出结果
+        // let a = 12;
+        // if (a >= 0 && a <= 20) {
+        //     if (a % 2 === 0) {
+        //         a += 2;
+        //     }
+        // } else {
+        //     a -= 2;
+        // }
+        // console.log(a);
+        // a >= 0 && a <= 20 ? (a % 2 === 0?  a += 2: null) :   a -= 2;
+
+        // 10 ? (console.log(1),console.log(2)): null
+
+        // console.log(a);
+
+        // let a = '10';
+        // a == 10 ? a++ : a--;
+        // console.log(a); 
+        //i++ 他不会拼接，他会把值转数字在运算
+
+        // switch case 比较的是全等 ===
+        // let b = '10';
+        // switch (b) {
+        //     case 10:
+        //         b++;
+        //         break;
+        //     default:
+        //         b--;
+        // }
+        // console.log(b);
+
+        // 3、 输出结果
+
+        //     !(!"Number(undefined)");​
+        // isNaN(parseInt(new Date())) + Number([1]) + !undefined;​
+        // // true + 1 + true
+        // Boolean(Number("")) + !isNaN(Number(null)) + Boolean("parseInt([])") + !!null;​
+
+        // //false + true + true + false // 2
+        // parseFloat("1.6px") + parseInt("1.2px") + parseInt(null);​
+        // // 1.6 + 1 + NaN
+        // isNaN(Number(!!Number(parseInt("0.8"))));​
+        // // false
+        // console.log(1 + "2" + "2");​
+        // parseFloat("0");​
+        // Number("");​
+        // "parseInt(null)" + 12 + !!Number(NaN);​
+        // // 'parseInt(null)12false'
+        // !(isNaN("")) + parseInt(NaN);​
+        // // true + NaN 
+        // !parseInt(null) + !isNaN(null);
+        //     // true + true
+        // !false == !!true
+        //     // true == true
+        // parseInt('35.4.2') === parseFloat('35.A.2')
+        // // true
+
+        //     !Number(undefined) == isNaN(Boolean(''))
+        // true == false
+
+
+        // [] == [] // flase
+        // '' == 0 // true
+        //     [0] == false // true
+        // true == 1 // true
+        // ({}) == '' // flase
+        // '12' > 2 // true
+        //     // '12' > '2'
+
+
+        //     ([]) == 0 // true
+        // 0 == null // false
+        // '{}' == 1 // false
+        // undefined == null // true
+        // null == undefined // true
+        // ({
+        //     name: 1
+        // }) == ({
+        //     name: 1
+        // }) // false
+        // undefined == 0 // false
+
+        // 4、 输出以下结果
+        // let i = 0 // 2 3 4
+        // console.log(i++ == ++i) // 0 == 2 false
+        // console.log(++i == i++) // true 3 == 3 true
+        // console.log(i); // 4
+
+        // 5、如何判断一个数字为整数？
+        // function fn(num){
+        //     if(num === parseInt(num)){
+        //         alert('这是一个整数'); // 阻断代码运行
+        //         console.log(1)
+        //     }
+        //     else{
+        //         alert('这不是一个整数')
+        //     }
+        // }
+        // fn(10)
+
+
+        // 6、把其他数据类型转换为数字有几种转换方式？
+
+        // 7、js的数据类型有哪些
+
+
+        // var str = 'abc123';
+        // var num = parseInt(str);
+        // if (num == NaN) {
+        //     alert(NaN);
+        // } else if (num == 123) {
+        //     alert(123);
+        // } else if (typeof num == 'number') {
+        //     alert('number'); //  //  // 李磊 冉
+        // } else {
+        //     alert('str'); //  // 
+        // }
+
+        let i = 1; // 1
+        console.log(2 - (i++) + (--i) + 2 + (++i) - (i--) - 2); // 2 
+        //          2 - 1 + 1 + 2 +2 -1-2
+        //          2-1+1+2+2-2-2
+        console.log(i); // 1 
+    </script>
+
+    <script>
+        //     function isInteger(num) {
+        //         if (!isNaN(num) && num%1 === 0 ) {
+        //             return true;
+        //         }else{
+        //             return false;
+        //         }
+        //     }
+        //     var a = 8; //给a赋的值就是需要进行判断的数字
+        //     var isNum = isInteger(a);
+        //     console.log(isNum);
+        // //当返回值为true时，需要判断的数字为整数
+
+
+        // && 如果前面转布尔是true就取后边的值（反之就是取前边的）
+        // || 如果前边转布尔是false就取后边（反之就是取前边的）
+
+            let ww = 1 || 5;
+            console.log(ww)
+
+            let ss = 0 && 5;
+            console.log(ss) // 0
+
+            if(1 && 5){
+
+            }
+
+        // && 如果前面转布尔是true就取后边的值（反之就是取前边的）
+        // || 如果前边转布尔是false就取后边（反之就是取前边的）
+        let c = 0 || NaN || 10
+        console.log(c);
+        let e = 0 && true || 3 && '' || 10
+        //           '' || 10
+        console.log(e)
+        let d = 1 && '' || 3 && 0 || NaN && 1
+        //         NaN 
+        console.log(d)
+
+        let b = true && !(1-6) || '1px'-5 && {} && ['0'] || !!false && (7*Number(''))  || 9+parseInt('') && 666;
+
+
+
+
+        
+        
+    </script>
+</body>
+
+</html>

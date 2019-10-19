@@ -28,6 +28,7 @@
     + boolean false、true
     + null 空指针对象
     + undefined 未定义
+    
 - 引用数据类型
     + object 对象
         + 普通对象 {name:'xxx', age:11}
