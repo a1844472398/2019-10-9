@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let name = 'zhuWuNeng';
+        // let pig = {
+        //     name: name,
+        //     age: 0 && 1,
+        //     fire: 3000,
+        //     speed: 0,
+        //     3: 'xxx'
+        // }
+
+        // 获取属性名对应属性值的方式
+        // 对象.属性名
+        // 对象['属性名']
+
+        //  如果属性名是数字，不可以用对象.属性名
+        // 属性值可以是一个表达式（他会把表达式算出结果），还可以是一个变量
+
+        // console.log(pig.3) // 报错
+        // console.log(pig['name']) // 'zhuWuNeng'
+        // console.log(pig.age) // 0
+
+         // 利用变量名获取对应的属性值
+        //  let a = 'name';
+        // let pig = {
+        //     name: '1111',
+        //     age: 0 && 1,
+        //     fire: 3000,
+        //     speed: 0,
+        //     3: 'xxx',
+        //     1: 'eee'
+        // }
+        // 想用变量的形式去获取属性值只能用 对象名[变量名]
+        // console.log(pig[a]) // pig['name']
+        // console.log(pig.name) // 
+        // console.log(pig.a) // undefined
+        // console.log(pig[sss]) // 报错
+
+        // 如果属性名是数字，他会优先在前面输出，而且从小到大依次排列
+        // for(var key in pig){
+        //     // console.log(key)
+        //     console.log(pig[key])
+        // }
+
+        //  如果属性名和属性值一样(写的一样不一样)，可以只写一个
+        // let name = 'xxx';
+        // let pig = {
+        //     name,
+        //     age: 0 && 1,
+        //     fire: 3000,
+        //     speed: 0,
+        //     3: 'xxx',
+        //     1: 'eee'
+        // }
+        // console.log(pig.name) // 'xxx'
+
+        // let name = 'name';
+        // let obj = {
+        //     name
+        // };
+        // console.log(obj[name]) // obj['name']
+            let a = 'erYa';
+            let name = 'name';
+            let obj = {
+                name: 1 && a
+            }
+            console.log(obj[name]) // obj['name'] 
+    </script>
+    
+</body>
+</html>

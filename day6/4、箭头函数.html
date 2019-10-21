@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 函数中的arguments
+        // 1、是个类数组，里面存储的是所有的实参（实参集合）
+        // 2.他不受形参和实参的影响（他总是会有）
+    //     function fn(){
+    //         console.log(arguments);
+    //         let total = 0;
+    //         for(var i =0;i<arguments.length;i++){
+    //             // arguments[i]
+    //             total+=arguments[i]
+    //         }
+    //         return total
+    //     }
+    //  let res =    fn()
+    //  console.log(res)
+
+    // 箭头函数（ES6）
+
+    // function fn(){
+    //     conosle.log(1)
+    // }
+    // fn()
+    // 改写为箭头函数
+
+    // let fn = (m)=>{
+    //     console.log(m,n)
+    // }
+    // fn(1)
+
+    // 如果形参只有一个，可以省略小括号
+    // let fn = m =>{
+    //     console.log(m)
+    // }
+    // fn(1)
+
+    // 如果函数体中只有return一行代码，可以省略return和大括号
+
+    // let fn = (m, n)=>{
+    //     return m+n
+    // }
+//     let fn = (m, n)=>m+n
+    
+//    let num =  fn(1, 2)
+//    console.log(num)
+   // 箭头函数没有this，没有arguments
+
+   // 给形参赋默认值(如果不传实参，就走默认值，传了就走实参的值)(是ES6规定的)
+//    function fn(m=0,n=0){
+
+//         // console.log(m,n)
+//         let num =m+n
+//         return num
+//    }
+//    let fn=(m=0,n=0)=>m+n
+   
+//   console.log(fn()) 
+
+// 如果箭头函数返回（return）的只是一个 {} ，那就把{}加上小括号
+// let fn =()=>{
+//     return {}
+// }
+// let fn = ()=>({})
+// console.log(fn())
+
+
+// 收缩（展开）运算符(ES6)
+    // let fn =(...a)=>{
+    //     // 收缩运算符
+    //     console.log(a) // [1,2,3,4,5]
+    //     // 展开运算符
+    //     console.log(...a) // 1 2 3 4 5
+    //     console.log(...[1,2,3]) // 1 2 3
+    // }
+    // fn(1,2,3,4,5)
+
+    // console.log(...[1,2,3])
+
+    //  arguments.callee指的是函数本身，在严格模式下已经禁止使用
+    // function fn(){
+    //     console.log(arguments.callee)
+    // }
+    // fn()
+
+    // function fn(n){
+    //     return function(m){
+    //         return console.log(1)
+    //     }
+    // }
+    // let fn =n=> m=> console.log(1)
+        
+    
+    // let cum = fn()
+    // console.log(cum())
+
+
+    // function fn(m){
+    //     return function(){
+    //         return 1
+    //     }
+    // }
+
+    // let cum = fn();
+    // console.log( cum() ) // 1
+
+        function fn(m){
+            m(3)
+        }
+        let cum = fn(function(r){
+            console.log(r)
+        })
+
+    </script>
+</body>
+</html>

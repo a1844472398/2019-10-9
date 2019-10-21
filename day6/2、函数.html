@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数</title>
+</head>
+<body>
+    <script>
+        // 函数体的小括号放的是形参变量（和实参是一一对应的）
+        // function fn(m,n){
+        //     // 函数执行时，实参没有给形参赋值，那在函数体里输出形参就是undefined
+        //     console.log(n,m) // 20, 10 // undefined 10
+        //     // 把函数的执行结果返回出去， 阻断代码向下运行
+        //     return 0 && 1;
+        //     console.log(n) // 
+        // }
+        // 函数名+()：函数执行
+        // 括号里变放的是实参
+        // console.log( fn(10, 20) )
+        // console.log( fn() ) 
+        // console.log(10, 20, 30)
+        // console.log( fn(10) ) // 1
+
+        // 匿名函数
+        // 函数表达式
+        //     let fn = function(){
+
+        //     }
+        //     fn()
+        // // 自执行函数
+        // (function(n){
+        //     console.log(n) // 100
+        // })(100)
+
+        // let fn = function(x){
+        //     return x
+        // }
+        // let m = fn(function(){
+        //     console.log(1)
+        // })
+
+        // console.log(m()) // fun
+    //         let ss = 12
+    //     function fn(m,n){
+    //         console.log(ss) // 12
+    //         let sum = m+n;
+    //         return sum
+    //     }
+    //    let num =  fn(10, 20);
+
+    //    console.log(sum) // 报错，拿不到函数体里边的东西
+
+    // 函数可以拿外边的变量，但是外边不可以拿里边（函数）的变量
+    let num = 12
+    function fn(n,m){
+        let sum = m+n;
+        return sum
+        console.log(num) // 
+    }
+    let aa = fn(10, 20);
+    console.log(sum) // 报错
+    </script>
+</body>
+</html>
