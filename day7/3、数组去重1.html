@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 循环数组中的每一项，拿当前项跟他后面的每一项去做比较，如果发现跟当前项相同了，就把那一项在原数组里删掉
+        let ary = [1,1,3,2,3,2];
+        // 循环数组的每一项
+        for (var i = 0; i < ary.length; i++) {
+           let cur = ary[i] // 当前项  1
+            // 这个循环就是当前项后面的每一项跟当前项做比较
+           for(var j =i+1;j < ary.length;j++){
+               let item = ary[j] // 
+               // 如果当前项跟他后面的某一项相等了，把那一项从原数组中删除
+               if(cur === item){
+                   ary.splice(j,1);
+                   j--
+               }
+           }
+        }
+    console.log(ary)
+    </script>
+    
+</body>
+</html>

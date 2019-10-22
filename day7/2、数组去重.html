@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组去重</title>
+</head>
+<body>
+    <script>
+        let ary = [1,2,1,2,1,2];
+        // 循环数组每一项，把每一项放进一个新数组里（如果新数组里有当前项了，那就不让你进来）
+
+        let newAry = []; // 创建一个新数组
+        // 循环原数组的每一项
+        for (var i = 0; i < ary.length; i++) {
+
+            let cur = ary[i]; // 当前项2
+            // 如果当前项在新数组里有了，那就不往新数组里添加了
+            if(newAry.includes(cur)){
+                continue; //结束本轮循环 
+            }
+            //往新数组里增加当前项
+            newAry.push(cur)
+        }
+        console.log(newAry)
+    
+    </script>
+</body>
+</html>
