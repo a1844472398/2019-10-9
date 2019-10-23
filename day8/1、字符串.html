@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let str = 'asdfgh';
+        // console.log(str.length) // 代表字符串的长度
+        // console.log(str[0]) // 字符串的第一项
+        // console.log(str[str.length-1]) // 字符串的最后一项
+        
+        // console.log(str)
+        // console.log(str.length--) // 不能删除
+        // console.log(str[str.length] = '3') // 不能新增
+        // // 通过length不能操作字符串
+        // console.log(str)
+        // let str = 'asdfgh';
+        // 字符串的方法都不改变原字符串
+        // 1、charAt:通过索引获取指定的字符串
+        // 2、charCodeAt:通过索引找到对应的ASCII码（Unicode编码）
+        // 如果获取不到就是空字符串
+        // console.log(str.charAt(0))
+        // console.log(str[0])
+        // console.log(str.charAt(100)) // ''
+        // console.log(str[100]) // undefined
+        // console.log(str.charCodeAt(0)) // 97
+        // console.log(str.charCodeAt(1)) // 115
+        // console.log(String.fromCharCode(97)) // a
+
+        // 字符串的查询
+        // 3、substr(n,m): 从索引n开始，查询m个;
+        // 4、substring(n,m):从索引n开始，查询到索引m（不包括索引m
+        //对应的那一项）
+        // 5、slice(n,m):从索引n开始，查询到索引m（不包括索引m
+        //对应的那一项）(支持负数)
+        //如果你传的参数是负数，那就把负数加length，然后在取值
+
+        // let str = 'asdfgh';
+        // console.log(str.substr(1, 2)) // sd
+        // console.log(str.substring(1,3)) // sd
+        // console.log(str.substr(0)) // 查询到底
+        // console.log(str.substring(0)) // 查询到底
+        // console.log(str.substr()) // 查询到底
+        // console.log(str.substring()) // 查询到底
+        // console.log(str.slice(-1,-4))//=> 5,2     [那每一参数加上length在取值]
+        // console.log(str.slice(-5,-1)) // 1,5  /// 
+
+        // ======= 检测某一项是否存在
+        // 6、indexOf(x,y):检测某个值开始的位置，把对应的索引返回出去(x是要查找的值，y是开始查询的位置)
+        // 7、lastIndexOf(x,y):检测某个值最后一次出现的位置，把对应的索引返回出去
+        // 8、includes: 查询某个值有没有，如果有就是true，没有就是false
+
+        
+        // console.log(str.indexOf('d')) // 2
+        // console.log(str.indexOf('a', 2)) // 4
+        // console.log(str.lastIndexOf('a')) // 6
+        // console.log(str.lastIndexOf('a', 5)) // 有疑问
+        // console.log(str.includes('x',5)) // false
+        // console.log(str.indexOf('sad')) // -1
+        // let str = 'as22d你好fagh';
+
+        // ==== 字符串转大小写
+        // 9、toUpperCase // 转大写（返回值就转换完成的字符串）
+        // 10、toLowerCase // 转小写（返回值就转换完成的字符串）
+        // console.log(str.toUpperCase().toLowerCase().toUpperCase())
+        // console.log(str.toLowerCase()) // 'as22d你好fagh'
+
+        // ======= 把字符串转数组
+
+        // 10、split():把字符串以指定分隔符分割为数组
+        // let str = 'erYa|xiaoHua|xiaoFang|diGua'
+        // console.log(str.split()) // ["erYa|xiaoHua|xiaoFang|diGua"]
+        // console.log(str.split('')) //  ["e", "r", "Y", "a", "|", "x", "i", "a", "o", "H", "u", "a", "|", "x", "i", "a", "o", "F", "a", "n", "g", "|", "d", "i", "G", "u", "a"]
+        // console.log(str.split('|')) // ["erYa", "xiaoHua", "xiaoFang", "diGua"]
+
+        // 需求：把 str转换为以逗号分割的字符串
+        // console.log(str.split('|').toString()) // 'erYa,xiaoHua,xiaoFang,diGua'
+        // console.log(str.split('|').join()) // 'erYa,xiaoHua,xiaoFang,diGua'
+
+        // =======替换
+        // 11、replace(老字符,新字符):把字符串中某个值替换为规定的内容
+        // let str = 'asasas'
+        // console.log(str.replace('a','x'))// 正常来说只会替换第一个 'xsasas'
+        // console.log(str.replace(/a/g,'x'))// 如果用正则就会全部替换 // 'xsxsxs'
+        // console.log(str.replace('a','x').replace('a','x')) // 'xsxsas'
+
+        // 把 '2019-10-23 12:22 '
+        // let str= '2019-10-23 12:22 '
+        // console.log(str.replace('-','年').replace('-','月').replace(' ','日').replace(':','时').replace(' ','分'))
+
+        // console.log(str.replace('er', '33')) // 如果替换失败就返回原字符串
+
+        let str = 'https://www.baidu.com?name=sunWuKong&age=null&sex=null'
+
+        // 1、获取连接里的参数
+        let index = str.indexOf('?'); // 21 // 获取问号的索引
+        let newStr = str.substring(index+1); // 通过问号的索引获取连接的参数
+        // 'name=sunWuKong&age=null&sex=null'
+        // console.log(str.split('?')[1]) // 获取连接的参数
+
+        // 2、以 '&'为分割符把字符串转换为数组，然后进行循环
+        let ary = newStr.split('&');
+        let obj={} // 创建一个存放参数的对象
+         // ["name=sunWuKong", "age=null", "sex=null"]
+
+        // 循环数组的每一项
+         for (var i = 0; i < ary.length; i++) {
+             let  cur = ary[i]; // 当前项
+            let newAry = cur.split('='); // 以 "="为分割符把当前项转换为数组，数组的第一项就是你要创建的键值对的属性名，数组的第二项就是键值对的属性值
+             // ['name','sunWuKong']
+            obj[newAry[0]] = newAry[1];
+         }
+         console.log(obj)
+
+
+
+        console.log(newStr)
+        console.log(index)
+    </script>
+</body>
+</html>

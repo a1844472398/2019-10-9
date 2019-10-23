@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function fn(){}
+        // let fn = function(){}
+        // (function(){})()
+    //     let n = 12;
+    //     function fn(v,m){
+    //         console.log(n)
+    //     }
+    //   let f =fn(3, 3, 4)
+    //   console.log(f)
+    //   console.log(v)
+
+    //   function fn(n,m){
+    //       return n+m
+    //   }
+    //   let sum = fn(10, 20)
+    //   console.log(sum)
+
+//     function fn(m){
+//         return function(r){
+//             console.log(1)
+//             return r
+//         }
+//     }
+
+//     let x = fn(function(r){
+//         console.log(2)
+//         return r
+//     })
+
+//    console.log(x(3))
+
+// let fn = function(m){
+//     (function(){
+//         m(6)
+//     })(m)
+//     return 6
+// }
+
+// let b = fn(function(m){
+//         console.log(m)
+//         return 7
+// })
+
+//     console.log(b())
+
+function fn(d){
+    return d('erYa')
+}
+
+let s = fn(function(d){ // 'erYa'
+    return function(d){
+        console.log(d)
+    }
+})
+    s('xiaoHua')
+    
+    </script>
+    
+</body>
+</html>

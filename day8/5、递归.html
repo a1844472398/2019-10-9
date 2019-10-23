@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function fn(n){
+        //     // console.log(1)
+        //     if(n>5){
+        //         return
+        //     }
+        //     console.log(1)
+        //     fn(n+1)
+        // }
+        // fn(1)
+
+        // 我要把1到100之间的能被7整除的数的和
+        function fn(num){
+            if(num >5){
+                return 0
+            }
+            if(num%2 === 0){
+                return num + fn(num+1)
+            }
+          return  fn(num+1)
+        }
+       console.log(fn(100) )
+
+
+    //    function fn(1){
+
+    //       return  6
+    //     }
+
+    // function fn(2){
+
+    //             return 2 + 4
+
+
+    //     }
+
+
+    // function fn(3){
+
+    //       return  4
+    //     }
+
+
+//     function fn(4){
+// 
+
+//                 return 4 + 0
+
+//         }
+
+
+// function fn(5){
+
+//           return  0
+//         }
+
+
+// function fn(6){
+
+//                 return 0
+//             
+
+//         }
+    </script>
+    
+</body>
+</html>

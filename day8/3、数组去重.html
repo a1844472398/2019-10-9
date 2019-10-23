@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let ary = [1,1,2,3,2,3];
+     let obj= {};
+     // 循环数组的每一项，以键值对的形式（1:1）把每一项增加到对象中（item：item）,但是增加的时候我得判断一下，如果对象中有这个键值对了，我就把数组中对应的那一项删除
+    for (var i = 0; i < ary.length; i++) {
+       // 如果在obj中查找这个属性名存在，那就说明已经存在了
+       if(obj[ary[i]] !== undefined){
+        //    ary.splice(i,1)  这样删除会引起数组的塌陷，对浏览器性能有消耗
+        // 所以我把数组的最后一项拿过来放到你要删除的那一项的位置上,
+            ary[i] = ary[ary.length-1]; // 把数组的最后一项放到你要删除的那一项的位置上
+            ary.length-- // 删除数组的最后一项
+           i-- // 把拿过来的那一项还得循环一遍判断一下
+           continue;
+       }
+       // 代码能够走到这里，说明对象中没有当前这一项
+       obj[ary[i]] = ary[i];
+    }
+    console.log(ary)
+    </script>
+</body>
+</html>

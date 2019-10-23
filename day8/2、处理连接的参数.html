@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let url = 'https://www.zhufengpeixun.cn?name=erYa&age=18&fire=1000';
+            let paramsStr= url.split('?')[1]; // 获取链接（字符串格式）"name=erYa&age=18&fire=1000"
+            let paramsAry = paramsStr.split('&'); // 以&为分隔符转换为数组（把参数分开） ["name=erYa","age=18","fire=1000"]
+            let obj={}; // 建立存放参数的对象
+            // 循环每一对参数的雏形
+            for (var i = 0; i < paramsAry.length; i++) {
+               let cur = paramsAry[i]; // 当前项
+               let newAry = cur.split('=');// 把雏形里的名和值分开（转为一个数组）
+               // 'name=erYa'=> ['name','erYa']
+               obj[newAry[0]] = newAry[1]// 往对象里新增键值对（参数）
+            }
+            console.log(obj) // 循环完成以后的obj就是存放参数的对象
+    </script>
+</body>
+</html>
