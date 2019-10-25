@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    position: absolute;
+    top:-100px;
+    right:0;
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: 1s;
+}
+</style>
+</head>
+<body>
+    <button id="btn">停止广告</button>
+    <div id="box"></div>
+<script>
+    /*
+        定时器
+            setTimeout  到了指定时间之后执行函数(只执行一次)
+            setTimeout(回调函数,间隔多少时间(毫秒),回调函数的实参)
+
+        关闭定时器:
+            clearTimeout(定时器的返回值,编号)
+            clearInterval(定时器的返回值,编号)
+
+
+        定时器
+            setInterval  只要一到指定时间就执行一次函数(重复多次)
+            setInterval(回调函数,间隔多少时间(毫秒),回调函数的实参)
+
+        关闭定时器:
+            clearTimeout(定时器的返回值,编号)
+            clearInterval(定时器的返回值,编号)
+        
+
+        
+    */
+
+    // setInterval(function(){
+    //     alert('嗝嗝嗝');
+    // },1000)
+
+
+
+//    console.dir(window);
+
+
+    // setTimeout(function(){
+    //     alert('bong!~');
+    // },2000);
+
+    // alert('bong!~');
+
+    // setTimeout(function(){
+    //    box.style.top = 0;
+    //    setTimeout(function(){
+    //         box.style.top = '-100px';
+    //    },5000)
+    // },5000);
+
+    //返回值是一个数字
+    let timer = setTimeout(function(t){
+        box.style.top = t;
+    },2000,0);
+
+    btn.onclick = function(){
+        clearTimeout(timer);
+    }
+
+    box.onclick = function(){
+        box.style.top = '-100px';
+    }
+
+    // let timer2 = setTimeout(function(t){
+       
+    // });
+    // console.log(timer,timer2); //1,2
+
+
+
+
+
+</script>
+</body>
+</html>

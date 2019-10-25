@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+<script>
+    function fn(){
+        let d = new Date;
+        let str = d.getFullYear() + '年' + (d.getMonth()+1) + '月' + 
+        d.getDate() + '日 ' + d.getHours() + '时' + d.getMinutes() + '分'+
+        d.getSeconds() + '秒';
+        box.innerHTML = str;
+    }
+    fn();//执行定时器中的函数，是一秒以后，但是一秒之前页面中是不会显示的
+    //所以要在定时器调用之前执行一次fn这个函数
+    setInterval(fn,1000);
+
+    // console.log(str);
+</script>
+</body>
+</html>
