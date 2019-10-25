@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        Date  记录计算机当前的时间（本地） 是不安全的
+
+        new Date(传入一个时间)
+
+
+    */    
+//    console.dir(Date);
+    // console.log(new Date);
+
+    let date = new Date;
+
+    console.log(date.getFullYear());//2019 年 数字类型
+    console.log(date.getMonth()+1); //获取月份，记得+1
+    console.log(date.getDate()); //获取日
+    console.log(date.getDay());//周几,周日为0
+    // console.log(['周日','周一','周二','周三','周四','周五','周六'][date.getDay()])
+
+    console.log(date.getHours());//小时
+    console.log(date.getMinutes()) //分钟
+    console.log(date.getSeconds()); //秒
+
+    //一秒等于1000毫秒
+
+    // 时间戳   1970年到现在的时间(时间戳是指格林威治时间1970年01月01日00时00分00秒(北京时间1970年01月01日08时00分00秒)起至现在的总秒数。)
+    console.log(Date.now());
+    console.log(+ date); 
+    // console.log('123'+56)
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body id="body">
+<script>
+    /*
+        Math,存着数学方法和属性
+
+        
+    */    
+    console.dir(Math);
+
+    // console.log(Math.PI);  //圆周率
+    // console.log(Math.ceil(5.00000006)) ;//6  向上取整
+    // console.log(Math.floor(5.1))// 5  向下取整
+    // console.log(Math.round(5.5)); //四舍五入
+    // console.log(Math.random()); //0-1之间的无线不循环小数（随机数）
+    // console.log(Math.abs(1)); //取绝对值
+    // console.log(Math.max(5,6,7,8,9)); //取最大值
+    // let ary = [5,6,7,8,9];
+    // console.log(Math.max(...ary));
+    // console.log(Math.min(5,6,7,8,9)); //取最小值
+    // console.log(Math.pow(2,4)); //取幂
+
+
+    // 0-5
+
+    function random(n,m){
+       return Math.round( Math.random() * (m-n)) + n;
+    }
+    // console.log( random(2,5) ); //0  * 3  0+2=2   1*3 + 5
+     
+    // 获取随机不重复的验证码
+
+    //3rQ8
+    let str = '1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM';
+
+    let temp = '';  //str[0]-> 0   '01fQ'
+    // let ary2 = [];
+    /*
+        ''
+        temp += '7'  -> '' temp = '' + '7' -> temp = '7'
+        temp += 'l' ->  temp = '7' + 'l' -> temp = '7l'
+    */
+
+    for(let i=0;i<4;i++){
+        temp += str[random(0,str.length-1)];
+        // ary2.push(str[random(0,str.length-1)])
+    }
+    
+    // console.log(ary2);
+
+    body.innerHTML = temp;//ary2.join('');
+
+
+
+
+
+
+
+
+
+
+
+
+    // console.dir(body)
+
+</script>
+</body>
+</html>

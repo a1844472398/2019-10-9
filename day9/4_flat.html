@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        flat
+            数组扁平化操作
+
+        Array.isArray(数据)
+    */
+    // let a = 0;
+    // console.log(!![].push)
+
+   //[1,2,3,4,5,6,7,8,9,10,'j','Q','K']
+    let ary = [1,2,3,[4,5,6,[7,8,9,[10,'j','Q','K',['大王','小王',['预言家','女巫']]]]]];
+    let ary2 = [];
+    function flat(ary){
+        for(let i=0;i<ary.length;i++){
+            if(!!ary[i].push){ //是数组
+                // ary2 = [...ary2,...ary[i]];
+                flat(ary[i]);
+            }else{
+                ary2.push(ary[i]);
+            }
+        }
+    }
+    // flat(ary);
+
+    // console.log(ary2);
+
+//    console.log(ary[3][3][3][2]);//'Q';
+
+    // console.log( ary.flat(4) );
+
+    // console.log( ary.flat(Infinity) );//Infinity 正无穷大
+
+
+    /*
+        除了null和undefined别的简单类型,添加自定义的属性和方法都是undefined
+    */
+
+    // let ary5 = [];
+    // ary5.a = 5;
+    // console.log(ary5.a);
+
+
+    // let str = '哈哈';
+    // str.a = 5;
+    // console.log(str.a);
+
+
+    // let n = null;
+    // let u;
+    // let num = 0;
+    // num.a = 10;
+    // console.log(num.a);
+    // console.log(n.a);
+    // console.log(u.a);
+
+
+    // let obj = {
+    //     push:function(){
+
+    //     }
+    // }
+    // console.log(obj.push);
+
+
+    // Array.isArray(数据)  查看参数是否为数组，是就为true否则false
+
+    // console.log(Array.isArray(1));
+
+
+
+
+        
+  
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

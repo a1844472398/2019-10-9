@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        全选:<input type="checkbox" id="all"/>
+    </div>
+    <div id="b">
+            <input type="checkbox"/>
+            <input type="checkbox"/>
+            <input type="checkbox"/>
+            <input type="checkbox"/>
+            <input type="checkbox"/>
+    </div>
+<script>
+    console.dir(Array);
+    /*
+        forEach(函数,修改this指向)  循环数组的
+        函数:
+            function fn(数组的每一项,数据的索引,整个数组){
+                console.log(数组的每一项,数据的索引,整个数组)
+            }
+            fn(1,2,3)
+    */
+    
+    // function fn(a){
+    //     console.log(a)
+    // }
+    // fn(1,2,3)
+
+    let ary = ['珠','feng','培训',17,16,18,'哈'];
+
+    // console.log(ary.forEach(function(item,i,all){
+    //     // console.log(item,i,all);
+    //     console.log(this);
+    //     // return 1;
+    // },'蒋子桐'));
+
+    function forEach(ary,callback){
+        for(let i=0;i<ary.length;i++){
+            callback(ary[i],i,ary);
+        }
+    }
+
+
+    //总有一些同学，参数都没传明白，如果你自己嵌套过18层，那么就没有问题了
+    // function f(a){
+    //     a(function(a){
+    //         a(function(){
+
+    //         });
+    //     });
+    // }
+    // f(function(a){
+    //     console.log(a);
+    //     a(function(a){
+    //         a();
+    //     });
+    // });
+
+
+    // function fn2(a){ //
+    //     // console.log(a);
+    //     a(1,2,3); //调用，传参为实参
+    // }
+    // fn2(function(a,b,c){
+    //     console.log(a,b,c);
+    // });//实参可以是所有的数据类型，简单和引用
+
+
+      // forEach(ary,function(a,b,c){
+    //     console.log(a,b,c);
+    //     // console.log(this);
+    // });
+
+
+    /*
+        map(回调,改变this指向)
+    */
+
+    // let newAry = ary.map(function(a,b,c){
+    //     return 1
+    // });
+
+    // console.log(newAry);
+
+    /*
+        some(function(){},修改this指向)
+            查看数组中的每个成员是否有一项是符合条件的，只要有一个符合就返回true，否则false
+    */
+    
+    // let b = ary.some(function(item){
+    //     return item >= 19;//随便 === '培训';
+    // });
+    // console.log(b);
+
+    /*
+        every(回调函数,修改this指向)
+
+            查看数组中的每个成员是否*都*符合条件,都符合就返回true，否则false
+    */
+    
+    // let bb = ary.every(function(item){
+    //     return !!item === true;  //!'珠'->false->!false => true
+    // });
+
+    // console.log(bb);
+
+    
+    //获取b下面的所有input
+    const checkeds = document.querySelectorAll('#b input');
+    //声明一个数组，为了存每个checkbox的值
+    let aryChecked = [];
+    //循环所有checkeds
+    for(let i=0;i<checkeds.length;i++){
+        //给数组的每项都添加一个false  [false,false,false,false,false]
+        aryChecked[i] = false;
+        checkeds[i].onclick = function(){
+            //当点击的时候，把checkbox对应的布尔值存到数组中
+            aryChecked[i] = this.checked; //[true,false,false,false,false]
+            //查看数组中的布尔值是否都为true
+            //最后把结果赋值给全选的checked
+            all.checked = aryChecked.every(item=>item);
+        }
+    }
+
+    // console.log(all);
+
+
+    /*
+        filter(回调函数,修改this)
+        回调函数(数组的每一项,索引,整个数组)
+        过滤:把数组中符合条件的数据放到一个新数组中，并且返回这个新数组
+
+    */
+
+    let arr = [true,false,false,false,false];
+    let arr2 = [];
+    for(let i=0;i<arr.length;i++){
+        if(arr[i] === false){
+            arr2.push(arr[i]);
+        }
+    }
+    // console.log(arr2);
+    console.log(arr.filter(item=>item===false));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

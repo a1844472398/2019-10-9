@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul"></ul>
+<script>
+    let str = '珠峰培训'; //讯
+    // console.log(str.charAt(0))   
+    // console.log(str[0])  
+
+    // console.log(str.replace('训','讯'));
+    // let ary = [1]; //2,3,4
+
+    // ary[1] = 2;  //[1,2]
+
+    // function push(ary,...arg){ //[2,3,4]
+    //     let ary2 = [...ary,...arg]; //[1,2,3,4]
+    //     let len = ary2.length;
+    //     for(let i=0;i<ary2.length;i++){
+    //         ary[i] = ary2[i];
+    //     }
+    //     return len;
+    // }
+
+    // console.log(push(ary,2,3,4))
+
+    // console.log(ary);
+
+
+    /*
+        map(callback,that) -> forEach
+            循环数组，返回一个新数组，新数组的长度和旧数组的长度一致
+
+        callback(每个数据,这个数据的索引,整个数组):回调函数（return 后面是什么，新数组的成员就是什么）
+
+
+    */
+
+    let ary = ['好好学习','天天向上','排除万难','赢得高薪'];
+
+    function map(ary,fn){
+        let ary2 = [];
+        for(let i=0;i<ary.length;i++){ //循环旧数组
+            ary2.push( fn(ary[i],i,ary) )
+        }
+        return ary2;
+    }
+
+    // console.log()
+
+
+    // ['<li>好好学习</li>','<li>天天向上</li>','<li>排除万难</li>','<li>赢得高薪</li>'];
+    // let ary2 = [];
+    // for(let i=0;i<ary.length;i++){
+    //     ary2.push(`<li>${ary[i]}</li>`);
+    // }
+
+    //['<li>好好学习</li>','<li>天天向上</li>','<li>排除万难</li>','<li>赢得高薪</li>'];
+    let ary2 = []; //新数组
+    //循环数组的每一项
+    for(let i=0;i<ary.length;i++){
+        //'<li>'+ ary[i] +'</li>' -> '<li>好</li>'
+        ary2.push('<li>'+ ary[i] +'</li>'); //['<li>好</li>','天']
+    }
+
+    // console.log(ary2);
+
+    // ul.innerHTML = ary2.join('');
+
+
+    // console.log( ary.map(item=>`<li>${item}</li>`) == ary)
+    // console.log(ary.map(function(item,index,all){
+    //     return '<li>'+item+'</li>';
+    // }));
+    ul.innerHTML = ary.map(function(item,index,all){
+        return '<li>'+item+'</li>';
+    }).join('')
+
+    //ary2.join('');
+
+    // ul.innerHTML = map(ary,(item,index,all)=>{
+    //     return `<li>${item}</li>`;
+    // }).join('');
+
+    // console.log(ary2);
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
