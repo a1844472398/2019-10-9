@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    position: absolute;
+    top:-100px;
+    right:0;
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: 1s;
+}
+</style>
+</head>
+<body>
+    <button id="btn">停止广告</button>
+    <div id="box"></div>
+<script>
+   
+    // let timer = setInterval(() => {
+    //     setTimeout(()=>{
+    //         box.style.top = 0;
+    //         setTimeout(() => {
+    //             box.style.top = '-100px';
+    //         }, 2000);
+    //     },2000);
+    // }, 4050);
+
+    
+    let onoff = true;
+    function fn(){
+        setTimeout(()=>{
+            box.style.top = 0;
+            setTimeout(() => {
+                box.style.top = '-100px';
+                onoff && fn();
+            }, 2000);
+        },2000);
+    }
+    fn();
+
+    btn.onclick = function(){
+        onoff = false;
+    }
+
+
+</script>
+</body>
+</html>

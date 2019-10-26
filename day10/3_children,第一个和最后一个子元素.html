@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul">
+        <li>
+            <p>1321</p>
+        </li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+<script>
+    /*
+        children:找到某个元素下的元素子节点
+
+        firstElementChild:找到父级的第一个子元素
+
+        lastElementChild:找到父级的最后一个子元素
+    */
+    let li = ul.children;//childNodes;
+    console.log(li.length)
+    for(let i=0;i<li.length;i++){
+        // if(li[i].nodeType === 1){
+            li[i].style.background = 'red';
+        // }
+    }
+
+    ul.firstElementChild.style.background = 'green';
+    ul.lastElementChild.style.background = 'yellow';
+
+    // console.log(ul.firstElementChild)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+}
+ul{
+    width:100px;
+    border:1px solid #000;
+}
+ul li{
+    height:30px;
+    line-height: 30px;
+    color:#000;
+    text-align: center;
+}
+.a{
+    background: aquamarine;
+    color:#000;
+}
+.b{
+    background:chocolate;
+    color:#fff;  
+}
+.c{
+    background:skyblue;
+    color:#fff;  
+}
+.d{
+    background:pink;
+}
+</style>
+</head>
+<body>
+    <ul id="ul">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+<script>
+    const lis = ul.children;
+    const last = ul.lastElementChild;//lis[lis.length-1];
+    const first = lis[0];
+
+    last.className = first.className = 'd';
+
+
+    for(let i=0;i<lis.length;i++){
+        if(i !== 0 || i !== lis.length-1){
+            lis[i].onmouseover = function(){
+                this.className = 'b';
+                this.previousElementSibling.className = 'a';
+                this.nextElementSibling.className = 'a';
+                if(i !== 0 || i !== lis.length-1){
+                    last.className = first.className = 'd';
+                }
+            }
+            lis[i].onmouseout = function(){
+                lis[i].nextElementSibling.className =  lis[i].previousElementSibling.className =  lis[i].className = '';
+                if(i !== 0 || i !== lis.length-1){
+                    last.className = first.className = 'd';
+                }
+            }
+          
+        }
+    }
+
+    last.onmouseover = first.onmouseover = function(){
+        this.className = 'c';
+    }
+    last.onmouseout = first.onmouseout = function(){
+        this.className = 'd';
+    }
+
+
+
+
+
+</script>
+</body>
+</html>

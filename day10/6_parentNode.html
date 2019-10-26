@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul">
+        <li><a href="javascript:;" id="a">1</a></li>
+        <li><a href="javascript:;">2</a></li>
+        <li><a href="javascript:;">3</a></li>
+        <li><a href="javascript:;">4</a></li>
+        <li><a href="javascript:;">5</a></li>
+    </ul>
+<script>
+    /*
+        parentNode  查找某个元素的父级节点
+    */
+    const as = document.querySelectorAll('a');
+
+    as.forEach(function(ele,index){
+        ele.onclick = function(){
+           this.parentNode.style.display = 'none';
+        }
+    });
+    console.dir(as);
+
+    console.log(a.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode )
+
+</script>
+</body>
+</html>
