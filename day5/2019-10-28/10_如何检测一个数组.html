@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        实例 instanceof 构造函数  
+        1.通过instanceof检测左值是不是右值构造出来的，是就为true，否则false
+        2.通过Array.isArray去检测数据是否为数组，是就为true，否则false
+        3.Object.prototype.toString.call(ary) === '[object Array]'
+        new Array
+    */
+    let ary = [1,2,3,4,5]; //'1,2,3,4,5'
+    let str = '';
+    let obj = {} //'[object Object]'
+
+    
+    console.log(Object.prototype.toString.call(ary) === '[object Array]')
+
+    // console.log(ary.toString());
+    // console.log(obj.toString())
+    // alert(obj);
+
+
+    // console.dir(Array);
+    // console.log(Array.isArray(str));
+    // console.log(str instanceof Array);
+
+    
+    
+    
+    // console.log(typeof ary);//'object'
+</script>
+</body>
+</html>

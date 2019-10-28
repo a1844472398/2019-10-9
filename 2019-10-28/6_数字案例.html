@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="t1"> + 
+    <input type="text" id="t2">
+    =
+    <span id="sum">?</span>
+    <button id="btn">计算</button>
+<script>
+    btn.onclick = function(){
+        // console.log(typeof t1.value);
+        // sum.innerText = Number(t1.value) + Number(t2.value);
+        // sum.innerText = parseInt(t1.value) + parseInt(t2.value);
+        sum.innerText = parseFloat(t1.value) + parseFloat(t2.value);
+    }
+
+    //
+    // console.log( parseInt('110',2) );// 0 1 1   0X2^0 + 1X2^1 + 1X2^2 = 6
+    
+
+    // console.log(Number(''));//0
+    // console.log(parseInt(''));//NaN
+    // console.log(isNaN(''));//false
+
+
+    /*
+        toFixed,保留指定位数的小数，注意的是指定+1的位数会通过四舍五入的方式进行计算
+        返回值为*字符串*
+    */
+    let to = 1.75633;
+
+    console.log(to.toFixed(3)); //最后转成字符串
+
+
+
+
+
+</script>
+</body>
+</html>

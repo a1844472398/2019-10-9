@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+<script>
+    let obj2 = {
+        width:100,
+        height:100,
+        background:'skyblue'
+    }    
+
+    for(let attr in obj2){
+        // console.log(attr);//key
+        if(attr === 'background'){
+            box.style[attr] = obj2[attr];
+        }else{
+            box.style[attr] = obj2[attr] + 'px';
+        }
+    }
+
+
+
+
+
+</script>
+</body>
+</html>

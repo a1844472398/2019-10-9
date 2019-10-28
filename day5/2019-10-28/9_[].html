@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    属性：<input type="text" id="t1">
+    值：<input type="text" id="t2">
+    <button id="btn">按钮</button>
+    <div id="box"></div>
+<script>
+    /*
+        []:
+            数组 [1,2,3,4]
+            下标 arr[0]
+            xx下的意思,[]里允许它是个变量，但是结果一定是个字符串
+
+        需求:
+            手动输入要设置的样式和值，设置box这个元素
+
+        思路:
+            1.点击按钮的时候，获取t1,t2的值
+            2.把这2个值赋值给box的style
+
+        
+        obj = {
+            style:{
+                val
+                width
+                height
+            }
+        }
+    */    
+
+    btn.onclick = function(){
+        let val = t1.value;
+        let val2 = t2.value;
+        let s = 'style'
+        // console.log(box.style.val); //'width'
+        box[s][val] = val2;
+    }
+
+
+
+</script>
+</body>
+</html>

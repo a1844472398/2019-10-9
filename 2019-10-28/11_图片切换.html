@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+}
+#box{
+    width:300px;
+    height:200px;
+    border:1px solid #000;
+    position: relative;
+}
+#box2{
+    width:300px;
+    position: absolute;
+    top:40%;
+}
+#prev{
+    float:left;
+}
+#next{
+    float:right;
+}
+#img{
+    width:300px;
+    height:200px;
+    border:none;
+}
+
+</style>
+</head>
+<body>
+    <div id="box">
+        <div id="box2">
+            <button id="prev">上一张</button>
+            <button id="next">下一张</button>
+        </div>
+        <img src="./img/1.png" id="img" />
+    </div>
+<script>
+    /*
+        思路:
+            1.点击下一张图片的时候，切换到下张图片
+                let num = 1; num++
+            2.点击下一张图片的时候，切换到上张图片
+                num --
+    */
+
+    let num = 1;
+    next.onclick = function(){
+        if(num < 8){
+            num ++;
+            img.src = `./img/${num}.png`;
+            console.log(1)
+        }
+       
+        // num ++;
+        // if(num > 8){
+        //     num = 8;
+        //     // num = 1;
+        // }
+        // img.src = `./img/${num}.png`;
+        // console.log(1)
+    }
+    prev.onclick = function(){
+        num --;
+        // if(num <= 0){
+        //     num = 1;
+        // }
+        if(num < 1){
+            num = 8;
+        }
+        // console.log(num)
+        img.src = `./img/${num}.png`;
+    }
+
+
+
+</script>
+</body>
+</html>

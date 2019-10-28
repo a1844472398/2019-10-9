@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:100px;
+    /* height:100px; */
+    background: red;
+    height:0;
+    transition: 1s;
+    position: absolute;
+    top:50px;
+    left:0;
+    /* display: none; */
+}   
+</style>
+</head>
+<body>
+    <button id="btn">显示</button>
+    <div id="box"></div>
+<script>
+    document.getElementById('btn').onclick = function(){
+        // document.getElementById('box').style.display = 'block';
+        document.getElementById('box').style.height = '100px';
+        document.getElementById('box').style.left = '300px';
+        document.getElementById('box').style.background = 'green';
+    }
+
+</script>
+</body>
+</html>

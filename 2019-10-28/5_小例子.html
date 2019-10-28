@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+ul{
+    width:200px;
+    height:300px;
+    border:1px solid #000;
+}
+</style>
+</head>
+<body>
+    <ul id="ul">
+        <li>你你你好好好</li>
+    </ul>
+    <input type="text" id="txt" /><button id="btn">发送</button>
+
+<script>
+    /*
+       1.js是啥
+       2.引入方式
+       3.注释
+       4.调试
+       5.获取元素
+       6.变量
+       7.属性操作
+       8.字符串
+       9.事件
+    */    
+
+    const btn = document.getElementById('btn');
+    const ul = document.getElementById('ul');
+    const txt = document.getElementById('txt');
+
+    //属性操作有读，写
+
+    btn.onclick = function(){
+        let val = txt.value;
+
+        // ul.innerHTML = '<li>'+val+'</li>';
+        // console.log(ul.innerHTML);///读操作
+        //既有刚才也有现在
+        // console.log(ul.innerHTML + '<li>'+val+'</li>' )
+
+        // let v = '</li>';
+        // console.log('<li>' + val + v); //'<li>'+val+'</li>'
+
+        
+        ul.innerHTML = ul.innerHTML + '<li>'+val+'</li>'; //写操作
+        // console.log(val);
+        // val = '';
+        txt.value = '';
+    }
+
+
+
+
+
+
+</script>
+</body>
+</html>
