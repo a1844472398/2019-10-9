@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        计数,本次返回的结果会作为下一次的上一次进行计算
+    */
+    let ary = [12,54,331,33,435];   
+
+    //prevTotal 上一次的结果     nextData 下一个运算的数据
+    let sum = ary.reduce(function(prevTotal,nextData){
+        console.log(prevTotal,nextData)
+        return prevTotal + nextData;
+    });
+
+    console.log(sum)
+
+    
+
+
+</script>
+</body>
+</html>

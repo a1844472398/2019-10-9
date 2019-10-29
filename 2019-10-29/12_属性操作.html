@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box" index="1" ></div>
+    <img src="rico.png"  id="img">
+<script>
+    /*
+        属性操作
+
+        box = { //001
+            id:'box',
+            attributes:{ //002
+                id:'box',
+                index:'1'
+            }
+        }
+
+
+        getAttribute(属性名)  获取标签身上行间的属性
+
+        setAttribute(属性名,属性值) 添加设置标签身上行间的属性
+
+        removeAttribute(属性名) 删除标签身上行间的属性
+
+        element.dataset.属性名 = 属性值 -> <div data-属性名="属性值">
+        
+        element.dataset.属性名  ->  属性值
+
+
+
+    */  
+    // let obj = {
+    //     name:'珠峰',
+    //     age:10,
+    //     name2:'二丫'
+    // }  
+    // console.log(obj.name2);
+
+    /*
+        当用户在标签身上自定义属性的时候，在元素对象上是不能直接通过
+        元素下的这种方式获取自定义属性的。
+
+        因为这些自定义的属性并不在同一个空间下。
+
+        使用对象下的方式操作属性，只能用对象下的方式去操作(增删改查)
+
+        操作行间的属性，那么就用Attribute系列(增删改查)
+
+
+
+    */
+
+    const box = document.getElementById('box'); //nodeType === 1 元素对象
+
+    // console.dir(box.id); //对象属性  'box'
+    // console.log(box.index);
+    // console.dir(box.getAttribute('index')); //1
+
+    // box.setAttribute('name','二丫');
+
+    // box.removeAttribute('index');
+
+    // console.log(box.name);
+
+    // box.name = '二丫';
+    // console.dir(box.getAttribute('name')); //null
+    // console.dir(box);
+
+    // console.log(box.index);
+
+
+    // console.log(img.src === 'rico.png');
+    
+    // let ary = img.src.split('/');
+    // console.log(ary[ary.length-1]);
+
+    // console.log(img.src.substring(img.src.lastIndexOf('/')+1));
+
+    // console.log(img.getAttribute('src'));
+
+    // box.setAttribute('data-spm','001');
+
+    // box.dataset.spm = '002';
+
+    // console.log(box.dataset.spm)
+
+    // console.dir(box);
+
+    //如何拿到这个属性 attributes
+
+    function getAttribute(element,attrName){
+        let ary = element.attributes;
+        for(let i=0;i<ary.length;i++){
+            if(ary[i].nodeName === attrName){
+                return ary[i].nodeValue;
+            }
+        }
+        return null;
+        // console.log(ary);
+    }
+
+    console.log(getAttribute(box,'index'));
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+.r{
+    width:50px;
+    height:50px;
+    background:skyblue;
+    position: absolute;
+    transition: .5s;
+    top:0;
+    left:0;
+}
+#box{
+    position: relative;
+}
+</style>
+</head>
+<body>
+
+    <div id="box">
+
+    </div>
+
+<script>
+    /*
+        递归:(难点)
+            重复的代码在函数内多次执行，函数自己调用自己
+
+            难点:难在经验上，多练
+
+            递归需要一个终止递归的条件
+    */    
+
+    // let i = 0;  //0-4  0 1 2 3 4
+    // function fn(){
+    //     console.log(i);
+    //     i ++;
+    //     if(i < 5){
+    //         fn();
+    //     }
+    //     // console.log(i);
+    //     // i++;
+    //     // console.log(i);
+    //     // i++
+    //     // console.log(i);
+    // }
+    // fn();
+
+    /*
+        当点击元素的时候，当前元素下掉，它的兄弟元素跟着掉
+
+        上  开   true
+        下  关   false
+    */
+    for(let i=0;i<10;i++){
+        let div = document.createElement('div');
+        //在循环的过程当中给它一个开关，默认为开true
+        div.onoff = true; //上 -> 300   下 -> 0
+        div.className = 'r';
+        div.style.left = i * 60 + 'px';
+        div.onclick = function(){
+            this.style.top = this.onoff?'300px':'0';
+            //当前的div下掉之后，立马取反，让下一次能够向上移动
+            this.onoff = !this.onoff;
+            
+            l(this);
+            r(this);
+        }
+        box.appendChild(div);
+    }
+
+    function l(ele){
+        //找上一个兄弟节点
+        let prev = ele.previousElementSibling;
+        //如果没有上个兄弟节点就不执行下面的代码
+        if(!prev)return;
+        setTimeout(function(){
+            prev.style.top = prev.onoff?'300px':0;
+            prev.onoff = !prev.onoff;
+            l(prev);
+        },100);
+    }
+    function r(ele){
+        let next = ele.nextElementSibling;
+        //如果没有上个兄弟节点就不执行下面的代码
+        if(!next)return;
+        setTimeout(function(){
+            next.style.top = next.onoff?'300px':0;
+            next.onoff = !next.onoff;
+            r(next);
+        },100);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

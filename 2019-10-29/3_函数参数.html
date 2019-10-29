@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    //如果有多个参数，就用逗号分割，形参和实参是一一对应的关系
+
+    //定义函数的时候括号中的自定义名字，就是形参(形式上的参数)
+    //等同于变量
+    // function fn(a,b){
+    //     console.log(a,b);
+    // }
+
+    //调用括号里面的数据叫实参(实实际际的参数)
+    //实参是可以为任意的数据类型
+    // fn(1,6);
+
+
+    function fn(a){ //var a =  function(){}
+
+        /*
+            a(1,fn)
+        */
+        
+        a(1,function(f){
+            // console.log(f)
+            f(function(){});
+        });
+    }
+
+    fn(function(a,fn1){  //var a=1,fn1=function(){}
+        // console.log(a,fn);
+        fn1(function(f){
+            f();
+        });
+    });
+
+
+
+
+
+
+    // function fn(callback){
+    //     callback(function(g){
+    //         // console.log(11)
+    //         g(function(num){
+    //             num(function(l){
+    //                 l(function(t){
+    //                     t(function(){
+
+    //                     });
+    //                 });
+    //             });
+    //         });
+    //     });
+    // }
+
+    // fn(function(f){
+    //     // console.log(1)
+    //     // console.log(f)
+    //     f(function(g){
+    //         g(function(h){
+    //             h(function(o){
+    //                 o(function(t){
+    //                     t();
+    //                 });
+    //             });
+    //         });
+    //     });
+    // })
+
+</script>
+</body>
+</html>

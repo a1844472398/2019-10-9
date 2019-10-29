@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        当一个函数在执行的时候，一定要记住有2件事要思考
+            1.函数运行
+            2.看看有没有return
+
+
+        return 下面的所有代码都不会执行。
+    */    
+
+    // function fn(a,b){
+    //     console.log(a,b);
+    //     return 2;
+    // }
+
+    // let x = fn(1,2);
+    // console.log( x );
+
+
+    // function fn(x,y){
+    //     console.log(x+y);//3
+    //     return function(){
+    //         console.log(x);//1
+    //     }
+    // }
+    // let f = fn(1,2);
+    // // console.log(f);
+    // console.log( f() ); //undefined
+
+
+
+    // function fn(x,y){
+    //     let z = x * y + y / x % y;
+    //     return z;
+    // }
+
+    // let f = fn(8,9); //数字
+
+    // console.log( f() );//数字()  报错
+
+
+
+
+    // function fn(){
+    //     // arguments
+    //     return 3;
+    // }
+
+    // let f = fn(1,12,321,32,321,321);//只要看到函数调用，使用返回值（输出、打印、赋值） 直接看return
+    // console.log(fn());
+
+
+    //函数返回值的意义在于，能够把函数内部的运算结果，拿到函数体的外面去使用
+    // function fn(x,y){
+    //     // console.log(x + y);
+    //     return (x + y)
+    // }
+
+    // let a = 5;
+
+    // let b = fn(5,4);
+
+    // console.log(a + b);
+
+    
+    // function fn(a,b,c,d){
+    //     let x = a + b * c / d % b;
+    //     return 1;
+    // }
+
+    // let xx = fn(32,321,3,23,21);
+    // console.log(xx);
+
+
+    // function fn(ds,da){
+    //     let x = ds / da;
+    //     return function(x){
+    //         console.log(x);
+    //     }
+    // }
+    // let f = fn(1,2);
+    // console.log(f());
+
+
+    // function fn(){
+    //     alert(1); //只会执行1
+    //     return;
+    //     alert(2);//因为在return下面所以不会执行
+    // }
+    // fn();
+
+
+    // function sum(x,y){
+    //     return x+y;
+    // }
+    // var result = sum(2,3);
+    // document.write( result );
+
+
+
+
+</script>
+</body>
+</html>

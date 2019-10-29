@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        在ES6里面添加了一个数据结构叫Set，它长得有点像一个对象
+        它的特性是，set中的成员不能有重复的值
+
+        size -> length
+
+        has -> 查看set对象中是否包含某个数据，包含就true，否则false
+
+        delete() 删除某个数据
+
+    */
+
+    // let s = new Set([1,2,1,2,1,2]);
+
+    // s.delete(1);
+    // console.dir(s);//.has(5)
+
+
+
+    // s.add(1);
+    // s.add(2);
+    // console.log([...s]);
+
+    // console.log([...new Set([1,2,1,2,1,2])]);
+
+
+    let ary = [1,2,3,4,5,6];
+    let ary2 = [2,3,8,9,7];  //找出2个数组相交的部分  2,3
+
+
+    
+
+    let ary5 = ary2.filter(item=>{
+        let s = new Set(ary);
+        return s.has(item);
+    });
+    console.log(ary5);
+
+
+
+
+
+    // let ary3 = [];
+    // for(let i=0;i<ary.length;i++){
+    //     for(let j=0;j<ary2.length;j++){
+    //         if(ary[i] === ary2[j]){
+    //             ary3.push(ary[i]);
+    //         }
+    //     }
+    // }
+    // console.log(ary3);
+
+    // let ary3 = ary.concat(ary2);
+    // let ary4 = [];
+    // let obj = {};
+    // ary3.forEach(item=>{
+    //     if(!obj[item]){
+    //         obj[item] = 1;
+    //     }else{
+    //         obj[item]++;
+    //     }
+    // });
+
+    // for(let attr in obj){
+    //     if(obj[attr] > 1){
+    //         ary4.push(attr*1);
+    //     }
+    // }
+
+    // console.log(ary4);
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

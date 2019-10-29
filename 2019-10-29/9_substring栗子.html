@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+#box{
+    width:200px;
+    border:4px solid #999;
+    padding:5px;
+}
+</style>
+</head>
+<body>
+    <div id="box">
+        <p id="p">“担负起把党中央决策部署和对人民政协工作要求落实下去、把海内外中华儿女智慧和力量凝聚起来的政治责任，为决胜全面建成小康社会、进而全面建设社会主义现代化强国作出贡献”。在中央政协工作会议暨庆祝中国人民政治协商会议成立70周年大会上，习近平总书记从实现中华民族伟大复兴的高度，对人民政协担负的政治责任提出明确要求，对于我们把党中央决策部署落实下去、把各方面智慧和力量凝聚起来具有重要指导意义，必将激励全党全国各族人民为实现中华民族伟大复兴中国梦而不懈奋斗。</p>
+        <a href="javascript:;" id="aa">>>收缩</a>
+    </div>
+<script>
+   /*
+        点击收缩，就让文字减少一些，按钮的文字变成>>展开
+        点击展开，就让文字多一些，按钮的文字变成>>收缩
+
+
+        1.把文字获取出来，才能减少
+        2.开关
+   */
+    let onoff = false;
+    let pv = p.innerText; 
+    aa.onclick = function(){
+        // console.log(pv);
+        if(!onoff){
+            p.innerText = pv.substr(0,30);
+            this.innerText = '>>展开'
+        }else{
+            p.innerText = pv;
+            this.innerText = '>>收缩'
+        }
+        onoff = !onoff;
+    }
+
+</script>
+</body>
+</html>

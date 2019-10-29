@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //取余
+    //字符串拼接 ，模板字符串
+    //|| 例子
+
+
+    // A > B 取余   12  %  5   2
+    // A < B 取A    5   %  12  5        1212121 %  34567898
+    // A == B    0   
+
+    //http://es6.ruanyifeng.com  学习ES6
+
+    let str = '珠';
+    let str2 = '峰';
+
+    let str3 = `今天的天${str}气还不${str2}错`;  //${}
+
+    // '',"",``,new String()
+
+    // let str3 = '今天的天' + str + '气还不'+ str2 +'错';
+
+    // console.log(str3);
+    // console.log(str + str2);
+
+    // let data = NaN || 8*'5px' || Number([1]) && parseInt('') 
+
+    // || isNaN('') || NaN+'undefined' && (5?'':'') || +'999'+Number('1px');
+
+    // console.log(data);
+
+    // let data = false || true && 5 || '1px'-10 || 8 && [0] && {} || 99 || ('8'+NaN)
+
+    // A && B || C
+
+
+    /*
+        for   
+            数组或者类数组或者字符串（一般是知道长度并且知道什么时候结束）
+
+            特殊格式的对象可以用for循环
+        
+        for in
+            是给对象或者数组使用的，一般都是给对象用(性能比较低)
+            因为枚举的时候会枚举到原型链上自定义属性
+
+        while
+            不知道具体的条件或者知道模糊的条件
+    */
+    // let obj = {
+    //     name:'小尹',
+    //     age:9999,
+    //     sex:"小meizhi"
+    // }
+    let obj2 = {
+        0:1,
+        1:2,
+        2:5,
+        length:3
+    }
+
+    for(let i=0;i<obj2.length;i++){
+        console.log(obj2[i]);
+    }
+
+    // let arr = [1,2,3,5]
+    // for(let key in arr){
+    //     console.log(arr[key]);
+    // }
+
+//    console.log(obj.length);
+
+    
+
+
+        
+</script>
+</body>
+</html>

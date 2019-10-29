@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+#box{
+    width:200px;
+    border:4px solid #999;
+    padding:5px;
+}
+.active{
+    background:yellow;
+}
+</style>
+</head>
+<body>
+    <input type="text" id="txt">
+    <button id="btn">查找</button>
+    <div id="box">
+        <p id="p">“担负起把党中央决策部署和对人民政协工作要求落实下去、把海内外中华儿女智慧和力量凝聚起来的政治责任，为决胜全面建成小康社会、进而全面建设社会主义现代化强国作出贡献”。在中央政协工作会议暨庆祝中国人民政治协商会议成立70周年大会上，习近平总书记从实现中华民族伟大复兴的高度，对人民政协担负的政治责任提出明确要求，对于我们把党中央决策部署落实下去、把各方面智慧和力量凝聚起来具有重要指导意义，必将激励全党全国各族人民为实现中华民族伟大复兴中国梦而不懈奋斗。</p>
+    </div>
+<script>
+    /*
+        当点击查找的时候，查找p标签中是否有查找的内容，如果有，就在内容外面
+        包一个span标签
+    */
+    let pv = p.innerHTML;
+
+    btn.onclick = function(){
+        let val = txt.value;
+        if(pv.includes(val)){
+            // alert('有')
+            let arr = pv.split(val); //数组
+            // arr.join('<span class="active">'+val+'</span>')
+            // console.log(arr.join('<span class="active">'+val+'</span>'));
+            p.innerHTML = arr.join('<span class="active">'+val+'</span>')
+        }else{
+            alert('查无此字');
+        }
+    }
+
+
+  
+</script>
+</body>
+</html>

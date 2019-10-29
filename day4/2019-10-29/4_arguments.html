@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        在函数内有个叫做arguments的关键字，这个关键字的含义是实参的集合
+
+        arguments是个类数组
+
+        箭头函数没有arguments
+
+        剩余运算符  function fn(...arg) 在形参上加...名字，就为剩余运算符，它是一个数组
+    */
+
+    // function fn(a,...ary){
+    //     console.log(a,ary);
+    // }
+
+    // fn(1,2,3);
+
+    
+    //可以给形参添加一个默认值
+    function fn(a=0,b=1){
+        // console.log(a,b);
+        // console.log([...arguments]); //arguments可以使用扩展运算符
+    }
+    fn(5,6);
+
+
+
+
+
+
+    // console.log(...[1,2,3])
+
+
+    // function fn(){
+    //     // console.log(arguments);
+    //     let num = 0;
+    //     for(let i=0;i<arguments.length;i++){
+    //         num += arguments[i];
+    //     }
+    //     console.log(num)
+    // }
+    // let fn = () => {
+    //     // console.log(arguments);
+    // }
+
+    // fn(1,2,3,4,3,4,3,4,3,4,3,4,3,4,3,4,2);
+</script>
+</body>
+</html>

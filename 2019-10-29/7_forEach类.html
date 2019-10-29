@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul"></ul>
+<script>
+    // let ary = [1,2,3,4,5];
+    /*
+        需求是换个写法，封装一个函数，有2个参数，第一个参数是数组，第二个参数
+        是回调函数，回调函数中的item指数组中的每个数据，i为当前这个数据的索引
+    */    
+    
+    // function forEach(arr,callback){
+    //     for(let i=0;i<arr.length;i++){
+    //         callback(arr[i],i);
+    //     }
+    //     // callback(arr[1],1);
+    //     // callback(arr[2],2);
+    //     // callback(arr[3],3);
+    //     // callback(arr[4],4);
+    // }
+
+    // forEach(ary,function(item,i){
+    //     console.log(item,i)
+    // });
+    
+    //不用慌，未来我们天天用，1个月之后，你会觉得为什么当初连forEach都觉得难？
+    //所有的API，全部都要用才能熟练
+    // ary.forEach(function(item,i){
+    //     console.log(item,i);
+    // });
+
+
+    let ary = ['skyblue','pink','yellow','green','yellowGreen','red'];
+
+    ary.forEach(item=>{
+        let li = document.createElement('li');
+        li.style.cssText = 'width:100px;height:100px;background:'+item;
+        ul.appendChild(li);
+    });
+
+
+</script>
+</body>
+</html>

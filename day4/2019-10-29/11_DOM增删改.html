@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body id="body">
+    <input type="text" id="txt"><button id="btn">发送</button>
+    <ul id="ul"></ul>
+
+
+    <button id="rp">替换</button>
+    <div id="box">12323132</div>
+
+<script>
+    /*
+        document.createElement('标签名')  创建
+
+        parentNode.appendChild(元素)  往父级的末尾添加一个元素
+
+        把新元素插到旧元素的前面
+        parentNode.insertBefore(插入新元素,旧元素)
+
+        删除:
+            parentNode.removeChild(要删除的元素)
+
+        改:
+            parentNode.replaceChild(替换的新元素,替换谁)
+
+    */    
+
+    btn.onclick = function(){
+        let li = document.createElement('li');
+        li.innerText = txt.value;
+        li.onclick = function(){
+            ul.removeChild(this);
+        }
+        // ul.appendChild(li);
+        ul.insertBefore(li,ul.children[0]);
+        txt.value = '';
+    }
+
+
+    /************************/
+
+    rp.onclick = function(){
+        let box = document.getElementById('box');
+        if(!box)return;
+        let bv = box.innerText;
+        let h1 = document.createElement('h1');
+        h1.innerText = bv;
+        body.replaceChild(h1,box);
+    }
+
+</script>
+</body>
+</html>
