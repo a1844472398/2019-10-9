@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 闭包
+//    function fn (){
+//        var i = 0;
+//        function f(){
+//            i ++;
+//            console.log(i);
+//        }
+//        function fa(){
+
+//        }
+//        return f ;
+//    }
+//    let ff = fn ();
+//    ff()
+//    ff()
+//  console.log (ff)
+
+
+
+
+
+
+     // 封闭空间
+    //  function f(){
+    //      alert(3);
+    //  }
+    //  f();
+    //  ~function(){
+    //      function f(){
+    //          alert(5);
+    //      }
+    //      f()
+    //  }()
+
+
+    //单例模式
+
+    // let name = '珠峰';
+    // let ip2 = '回龙观东大街';
+    // let age = 10;
+    // let name2 = '孟记粥铺';
+    // let ip = '回龙观东大街';
+    // let age2 = 5;
+
+    // let obj2 = (function(){
+    //     let name = '珠峰';
+    //     let ip = '回龙观东大街';
+    //     let age = 0;
+
+    //     function sum(){
+    //         let age = 0;
+    //         for(let i=0;i<10;i++){
+    //             age ++
+    //         }
+    //         return age;
+    //     }
+    //     age = sum();
+
+    //     console.log(age);
+
+    //     return {
+    //         name:name,
+    //         ip:ip,
+    //         sum:sum
+    //     }
+    // })();
+
+    // let obj3 = (function(){
+    //     let age = 0;
+
+    //     function sum(){
+    //         console.log(1);
+    //     }
+    //     sum();
+    //     // age = sumfn();
+    //     console.log(obj2.sum());
+    // })();
+
+    // /*
+    //     // [].push
+    //     // ''.substring
+
+    //     Object.prototype.toString
+    //     [1,2,3] -> '1,2,3'
+    //     {} -> '[object Object]'
+    // */
+
+    // console.log(obj2)
+
+
+  //封装
+    // let con = {
+    //     log:function(i){
+    //         console.log(i);
+    //         return i;
+    //     },
+    //     dir:function(i){
+    //         console.dir(i);
+    //         return i;
+    //     },
+    //     sum:function(log,dir){
+    //         return log + dir;
+    //     }
+    // }
+
+    // let obj2 = (function(){
+    //     let sum = 0;
+    //     function sumAn(log,dir){
+    //         return log + dir;
+    //     }
+    //     return {
+    //         sum:sumAn(5,5)
+    //     }
+    // })();
+    // console.log(obj2.sum)
+
+
+   //工厂模式
+
+//    let obj1 = {
+//        name :'li',
+//        age:12,
+//    }
+//    let obj2 ={
+//        name:'div',
+//        age:13,
+//    }
+
+//    let obj3 = {
+//        name:'spen',
+//        age:15,
+//    }
+
+// function fn (name,age){
+//     let obj = {};
+//     obj .name = name;
+//     obj. age = age;
+//     return obj;
+// }
+// let obj = fn ('li',12)
+// console.log(obj)
+
+    </script>
+</body>
+</html>
