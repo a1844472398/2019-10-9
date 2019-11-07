@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /*
+    call(that,多个)
+    apply(that,两个)
+    bind(that,多个)
+    共同特点都是，第一个参数都是改变this指向的，函数天生自带的
+    null，undefined（无效的）传了都是window
+
+    1.this是实例
+    2.默认return实例，如果return为引用类型就为引用类型
+    3.实例的原型链 === 构造函数的原型
+    4.可以不加括号调用
+    */
+
+//     function Fn(name){
+//         this.name = name
+//     }
+//    let f = New(Fn,'haha');
+//    console.log(f.constructor)
+
+//    function New (fn,...arg){
+//        let obj = new Object;
+//        let callback = fn.call(obj,...arg);
+//        obj.__porto__ = fn.prototype;
+//        if(callback !==null && typeof callback === 'object' || typeof callback === 'function'){
+//            return callback;
+//        }
+//        return obj;
+//    }
+
+
+// var a = 1;
+// a.a = 2;
+// console.log(a.a)
+// const x = {
+//     a:1,
+//     c:{
+//         a:3,
+//         c:{
+//             d:function(){
+//                 console.log(this.a)
+//             }
+//         }
+//     }
+// }
+// const y = x.c.c.d;
+//     x.c.c.d();// undefined
+//     y();
+
+
+
+
+
+// var x = {
+//     a:1,
+//     c:{
+//         a:3,
+//         c:{
+//             d:function(){
+//                 console.log(this.a)
+//             }
+//         }
+//     }
+// }
+// var y = x.c.c.d;
+//     x.c.c.d();//undefined
+//     y();
+
+
+// var a = 1;
+//     a.a = 2;
+//     console.log(a.a);
+
+//     const x = {
+//         a:1,
+//         c:{
+//             a:3,
+//             c:{
+//                 a:5,
+//                 d:function(){
+//                     console.log(this.a)
+//                 }
+//             }
+//         }
+//     }
+//     const y = x.c.c.d;
+//     x.c.c.d();
+//     y();
+
+
+/*
+  class 类名{
+      constructor(){
+          给自身添加属性或者方法，就必须要写constructor
+      }
+  }
+
+/
+class 类名{
+    constructor（）{
+        给自身添加属性或者方法，就必须要写constructor
+    }
+}
+
+/
+
+
+
+*/
+// class Person{
+//     constructor(name){
+//         this.name = name;
+//     }
+//     say(){
+//         console.log(this.name);
+//     }
+// }
+// Person.prototype.haha = 10;
+// let p = new Person('haha')
+
+// let obj = {
+//     fn:function(){
+//         console.log(1);
+//     },
+//     fn:fn,
+
+//     fn
+// }
+
+// obj .fn ()
+
+
+    </script>
+</body>
+</html>
