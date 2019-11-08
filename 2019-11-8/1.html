@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /*
+      面向对象的特征：
+      封装、继承、多态
+
+
+      继承：
+          子类具有父类的一部分特征（这部分相同的特征是从父类继承下来的），自己还有自己的特征
+
+      人：
+        直立行走，实用工具，会说高级语言，是有感情的
+
+        警察：
+            配枪、穿警服、开警车、带警帽....
+    
+    */
+    // function Person(name,age){
+    //     this.name = name;
+    //     this.age = age;
+    // }
+    // Person.prototype.say = function(){
+    //     alert('举起手来'+this.name);
+    // }
+    // let p1 = new Person('冉德鹏',18);
+    // p1.say()
+    // console.log(p1)
+
+    /*
+    警察也是有人类的特性，人类写过一遍方法，警察就不用写了
+
+    继承的写法可以让子类代码减少很多，从而达到高内聚，低耦合的目的，减少了开发成本
+    */
+//     function Police (name,age){
+//         this.name = name;
+//         this.age = age;
+//         this.job = '朕';
+//     }
+//     Police .prototype.say = function(){
+//         alert('举起手来'+this.name);
+//     }
+//     Police .prototype.nongta = function(){
+//         alert(this.name+'弄死你');
+//     }
+//   let p2 = new Police('冉德鹏',100);
+//   p2.say();
+//   p2.nongta();
+
+/*
+ 继承的方式很多：
+      类式继承（call继承）
+      原型继承
+      寄生式组合继承
+      拷贝继承
+      对象继承
+      class继承
+      ...
+
+    
+继承最后的结果是 能够继承父类的属性和方法
+
+继承属性：
+   调用父类，通过call吧this变为子类的实例即可（call继承）
+       function Police (name,age){
+       //this -> 实例
+       Person.call(this,name,age);
+       console.log(this);
+                }
+  方法继承：
+    通过浅拷贝，把父级上原型的方法或者属性都赋值给子类的原型
+    Object.assigin(子类.prototype,父级.portotype)
+
+*/
+// 函数，类，实例
+
+//   function Person(naem,age){
+//       this.name = name;
+//       this.age = age ;
+//   }
+//   Person.prototype.say = function(){
+//       Person.call(this,name,age)
+//   }
+    //  下面这种写法是不可取的，因为2个原型赋址了，修改A就会影响B
+    // Police.prototype = Person.prototype;
+
+//     Object.assign(Police.prototype,Person.prototype);
+//  Police.prototype.say = function(){
+//      alert('举起手来');
+//  }
+//  let p2 = new Polick('冉德鹏',250);
+//  let p = new Person('尹德志',111);
+//  p2.say();
+//  p.say();
+
+
+//  解决赋址的方案
+
+/*
+如果不是赋址，是赋值就解决了这个问题
+
+Object.assign  浅拷贝
+
+Object.assign(obj2,obj1,obj1)
+
+从右往左浅拷贝对象的属性，可以放若干对象
+
+*/
+// let prototype1 = {
+//     say(){
+//         console.log('我是冉德鹏');
+//     }
+// }
+// let prototype2 = {};
+   
+//    prototype2 = prototype1;  //赋值关系
+
+//    Object.prototype.aaa = 10;
+//      for(let attr in prototype1){
+//          //for in会枚举当前对象原型下的属性或者方法，使用hasOwnProperty就能只找对象自身的属性了
+//        if(prototype1.hasOwnProperty(attr)){
+//            prototype2[attr] = prototype1[attr];
+//       }
+//     }
+//      Object.assign(prototype2,prototype1);
+
+//      console.dir(Object)
+//      prototype2.say =  function(){
+//          console.log('我是警察')
+//      }
+
+//      console.log(prototype2)
+
+//      prototype1.say();
+//      prototype2.say();
+/*
+2个引用类型的赋值就是赋值地址
+原始类型的赋值就是普通赋值了，其实赋值引用类型的目的是B拿到A下面的属性
+
+  如何才能避免赋值呢
+     1.如要2个不同地址
+     2.B地址下拥有A地址下的原始类型的数据即可（原始类型的赋值）
+
+*/
+
+
+// let ary = [1,2,3[1]];
+// let ary2 = ary;
+// let ary2 = [];
+     //浅拷贝(克隆)
+     //for(let i=0;i<ary.length;i++){
+         //原始数据类型的赋值就是简单赋值关系，不会赋值地址1,2,3
+    //     ary2[i] = ary[i];  //如果数组中还包有引用类型，那么赋值还是赋址
+    // }
+
+    // ary2.push(5);
+
+    // ary2[3].push(2);
+
+    // console.log(ary);//1,2,3,5
+
+        // let ary = [1,2,3,[[[[[[[[[[1]]]]]]]]]]];
+
+        let ary = [1,2,3,[1,2,3,{name:[1,2,3]}]];
+
+//深度克隆
+// function deepclone(obj){
+    //看看obj是不是一个对象，不是对象就不执行deepclone
+    // if(typeof obj !== 'object' && obj !== null)return null;
+    // let o = Array.isArray(obj)?[]:{};
+    // let o = obj.push?[]:{}; //确认传进来的值到底是数组还是对象
+    // for(let attr in obj){
+        //如果碰到了引用类型就继续循环，原始类型才赋值
+//         if(typeof obj[attr] === 'object'){
+//             o[attr] = deepclone(obj[attr]);
+//         }else{
+//             o[attr] = obj[attr];
+//         }
+//     }
+//     return o;
+// }
+
+//JSON.parse(JSON.stringify(ary))
+// let ary2 = deepclone(ary);
+// ary2[3][0][0][0][0][0][0][0][0][0].push(4);
+// console.log(ary2);
+
+   /*
+        浅拷贝:
+        Object.assign(obj2,obj1,obj0)    
+
+        最后改变的是obj2，obj1是不会被修改的
+   */
+
+//    let obj = {
+//         name:'阿里',
+//         age:10
+//     }
+//     let obj2 = {
+//         sex:'男',
+//         name:'zf',
+//         age:5
+//     }
+//     let obj3 = {
+//         aa:8
+//     }
+
+    //把obj3,obj2,obj的内容赋值到{}中
+    // let obj4 = Object.assign({},obj3,obj2,obj); //越往右边层级越高
+
+    // console.log(obj4);
+
+
+
+
+    // function Person(name,age){
+    //     this.name = name;
+    //     this.age = age;
+        // console.log(name);
+    //     console.log('此处会有一万行代码');
+    // }
+    // Person.prototype.say = function(){
+    //     alert(`我的名字叫`+this.name);
+    // }
+  
+    // function Police (name,age){
+    //     Person.call(this,name,age);
+    // }
+
+    // function Paohui(){}
+    // Paohui.prototype = Person.prototype;
+    // Police.prototype = new Paohui;
+
+    // Police.prototype = new Person;//new Paohui;
+
+    // Police.prototype.constructor = Police;
+    /*
+        p2.say -> p2.__proto__ -> Police.prototype -> 
+
+        new Person ->new Person().__proto__ ->
+
+        Person.prototype
+    */
+
+
+    /*
+        p2.say  -> p2.__proto__ -> Police.prototype
+
+        new Paohui() -> new Paohui().__proto__ -> 
+
+        Paohui.prototype -> Person.prototype
+
+        Person.prototype.say  √
+
+
+    */
+
+    // Police.prototype.say = function(){
+    //     alert(`我是警察`+this.name);
+    // }
+    // Police.prototype.kongfu = function(){
+    //     console.log(this.name +'弄冉德鹏');
+    // }
+
+    // let p2 = new Police('冉德鹏',100);
+    // let p1 = new Person('刘成',19);
+
+    // console.log(p2.constructor);
+    // p2.say();
+    // p1.say();
+
+    // console.log(p2);
+
+
+
+
+
+
+    // function Person(name,age){
+    //     this.name = name;
+    //     this.age = age;
+    // }
+    // Person.prototype.say = function(){
+    //     alert(`我的名字叫`+this.name);
+    // }
+  
+    // function Police (name,age){
+    //     Person.call(this,name,age);
+    // }
+    // Police.prototype = Object.create(Person.prototype); //寄生式组合
+    // // Police.prototype.constructor = Police;
+
+
+
+    // Police.prototype.say = function(){
+    //     alert(`我是警察`+this.name);
+    // }
+    // Police.prototype.kongfu = function(){
+    //     console.log(this.name +'弄某炎');
+    // }
+
+    // let p2 = new Police('冉德鹏',100);
+    // let p1 = new Person('刘成',19);
+
+    // p2.say();
+    // p1.say();
+
+    // console.log(p2.constructor);
+
+
+    // let obj =  Object.create({name:'haha'});
+
+    // console.log(obj);
+  
+    /*
+        函数
+        类
+        实例
+
+        function fn(){} -> new Function
+
+
+        Function是个内置类 -> 它也是个函数
+
+        Function.prototype  给所有的小写function使用也包括它自己
+
+
+
+
+        fn : {
+            __proto__:Function.prototype,
+
+            prototype:{
+                constructor:fn
+            },
+
+            执行栈:{
+                console.log(1);
+                this.a = 6;
+            },
+            a:5
+        }
+
+        fn() -> 执行栈
+        new fn() -> prototype
+        fn.a -> Function.prototype
+
+
+        Function.prototype是的函数，不是对象，而且这个函数还不是new Function
+        构造出来的
+
+    */    
+
+    // Function.prototype.a = 10;
+
+    // console.log(Function.a);
+
+    // console.log(Object.a);
+
+    // console.log(Function.prototype instanceof Object);
+    // console.log(typeof Function.prototype)
+
+    // console.log(Function)
+
+    // function fn(){
+    //     // console.log(1);
+    //     // this.a = 5;
+    // }
+
+    // console.log(fn.a)
+
+    // fn(); //函数
+    // new fn(); //类
+    // fn.xx //->实例
+
+
+    
+
+    </script>
+</body>
+</html>
