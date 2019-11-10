@@ -35,39 +35,11 @@
             </div>
         </nav>
         <ul class="list" id="ul">
-            <!-- <li>
-                <img src="./img/2.jpg" alt="">
-                <p>商品名称:<span>dsdsadsads</span></p>
-                <p>上架时间:<span>2019-10-10</span></p>
-                <p>商品热度:<span>32</span></p>
-                <p>商品价格::<span>200</span></p>
-            </li> -->
         </ul>
        
    </section>
-<!-- <script src="./json/product.js"></script> -->
 <script>
-    /*
-        live server 插件
-        http://127.0.0.1:5500/index.html 使用右键选择 open with live server
-
-
-        json文件需要通过服务器环境去拿，安装live server的目的是在编辑器中开一个服务器
-        当开了服务器之后，就可以通过http请求（fetch）的方式拿到json文件
-
-
-
-        11月9日 我们开始进行ajax请求
-
-        fetch(文件路径).then(d=>d.json())
-        .then(data=>{
-            console.log(data);
-        })
-
-        谁先理解这句话，谁就不会在ajax这里掉坑。
-
-        数据请求不难，一句话的事，难的时候，拿到数据怎么办？
-
+/*
 
         需求:
             1.请求数据，拿到那10个数据
@@ -83,7 +55,6 @@
                     按照商品价格搜索
                     按照商品热度搜索
     */
-    // console.log(fetch);
     fetch('./json/product.json')
     .then(d=>d.json())
     .then(data=>{
@@ -187,7 +158,6 @@
             this.onoff = !this.onoff;
             render(newdata);
         }
-        //'2017-02-08' - '2017-01-25'
     });
 
 
