@@ -174,7 +174,7 @@ Object.assign(obj2,obj1,obj1)
 // function deepclone(obj){
     //看看obj是不是一个对象，不是对象就不执行deepclone
     // if(typeof obj !== 'object' && obj !== null)return null;
-    // let o = Array.isArray(obj)?[]:{};
+    // let o = Array.isArray(obj)?[]:{};   
     // let o = obj.push?[]:{}; //确认传进来的值到底是数组还是对象
     // for(let attr in obj){
         //如果碰到了引用类型就继续循环，原始类型才赋值
@@ -192,7 +192,8 @@ Object.assign(obj2,obj1,obj1)
 // ary2[3][0][0][0][0][0][0][0][0][0].push(4);
 // console.log(ary2);
 
-   /*
+
+   /* 
         浅拷贝:
         Object.assign(obj2,obj1,obj0)    
 
@@ -260,7 +261,7 @@ Object.assign(obj2,obj1,obj1)
         Person.prototype.say  √
 
 
-    */
+    */ 
 
     // Police.prototype.say = function(){
     //     alert(`我是警察`+this.name);

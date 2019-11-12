@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+   let ary = [1,2,3,4,5,6,8];
+   /*
+   =号是赋值
+
+   就是把右边的数据赋值到左边
+
+   简单数据类型就是赋值（你的就是你的，我的就是我的，你修改不会影响我）
+   引用类型赋址操作（你的就是我的，我的还是我的，修改你就会影响我.
+    ）
+   
+   */
+//    let ary2 = [];
+    // for(let i=0;i<ary.length;i++){
+    //     ary2[i] = ary[i];  //[1] = [1,[]][0]  //[]001 = []001
+    // }
+
+    // function deepClone(ary){
+    //     let ary2 = [];
+    //     for(let i=0;i<ary.length;i++){
+    //         if(ary[i] !== null && typeof ary[i] === 'object'){
+    //             ary2[i] = deepClone(ary[i])
+    //         }else{
+    //             ary2[i] = ary[i]; //简单类型就是赋值 
+    //         }
+    //         /*
+    //             //ary[i] -> 有可能是引用类型,但是又不想让这个引用类型赋值
+    //             这个时候就想要到，如果是引用类型，就继续循环里面的数据
+    //         */
+    //     }
+    //     return ary2;
+    // }
+
+    function deepClone(o) {
+        let obj = o.push?[]:{};
+        for(let attr in o){
+            if(o[attr] !== null && typeof o[attr] === 'object'){
+                obj[attr] = deepClone(o[attr])
+            }else{
+                obj[attr] = o[attr]; //简单类型就是赋值 
+            }
+        }
+        return obj;
+    }
+   
+    let ary2 = deepClone(ary);
+    ary2.push(4);
+
+    console.log(ary);
+    </script>
+</body>
+</html>
