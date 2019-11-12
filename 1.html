@@ -114,28 +114,77 @@
     //   d(function(f){
     //     f(function(){
 
-    //     })
+    //     }) 
+
     //   })
     //  })
     // })
-    var x = 2;
-    var y = {
-      x: 3,
-      z: (function (x) {
-        this.x *= x;
-        x += 2;
-        return function (n) {
-          this.x *= n;
-          x += 3;
-          console.log(x);
-        }
-      })(x)
-    };
-    var m = y.z;
-    m(4);
-    y.z(5);
-    console.log(x, y.x);
+    // var x = 2;
+    // var y = {
+    //   x: 3,
+    //   z: (function (x) {
+    //     this.x *= x;
+    //     x += 2;
+    //     return function (n) {
+    //       this.x *= n;
+    //       x += 3;
+    //       console.log(x);
+    //     }
+    //   })(x)
+    // };
+    // var m = y.z;
+    // m(4);
+    // y.z(5);
+    // console.log(x, y.x);
     
+
+
+
+    /*   \ ：转义字符   把正则中有特殊含义的字符 转成字符本身(不再有任何特殊的含义)
+            \d     ：代表了 0-9之间的数字
+            \D     ：代表除了 0-9 的任意字符；
+            \w     ：代表了 数字 字母  下划线；
+            \W     ：代表除了 数字 字母 下划线 之外的任意字符 
+            ^      ：代表以什么 字符 开头
+            $      ：代表以什么 字符 结尾
+            .      ：代表除了换行以外的所有字符
+            \n     ：代表换行
+            x|y    ：代表 x 或者 y
+            [ab]   ：代表a或者b
+            [^ab]  ：代表非ab
+            [a-z]  ：代表 a-z之间的任意字符
+            [^a-z] ：代表除了 小写字母
+            ()     ：分组和提升优先级的意思 
+            (?:)   ：非捕获 匹配
+            (?=)
+            (?!)
+
+        量词元字符：一般都是用在了其他元字符的后边 
+            ?   ： 代表 前边的字符出现 0或1次
+            +   :  代表 前边的字符出现 1或多次
+            *   :  代表 前边的字符出现 0或多次
+            {n} ： 代表 前边的字符出现 n次
+            {n,m} ： 代表 前边的字符出现 n到m次
+            {n,} ： 代表 那边的字符出现 n到多次
+
+        修饰符 ：
+            i : 忽略大小写  ignoreCase
+            m : 多行匹配  mutiline
+            g : 全局匹配  global
+
+    */
+
+
+
+// str = '冉德鹏看完动物世界后特别浪费纸'
+//   console.log(str.replace(/冉德鹏|动物世界|浪费纸/g,function($0){
+//     console.log($0)
+//     let temp = '';
+//     for(let i = 0;i<$0.length;i++){
+//       temp += '*';
+//     }
+//     return temp;
+//   }))
   </script>
 </body>
 

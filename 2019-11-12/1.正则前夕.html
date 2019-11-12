@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+  let str = 'fbudsi1564dsa1564dsa4516s15d4s5d';
+// //    console.log(str.match(/\d+/g));
+let ary = [];
+let temp = '';
+// for(let i=0;i<str.length;i++){
+//     // 如果当前的字符串为数字那么进行字符拼接
+//     if(!isNaN(parseInt(str[i]))){
+//         temp +=str[i];
+//     }else{
+//         if(temp){//保证temp不是一个空字符串
+//             ary.push(temp);
+//             temp = '';
+//         }
+//     }
+// }
+// console.log(ary)
+//for循环完之后，如果发现temp不是一个空字符串，说明最后几个为数字，需要把没有push到数组中的数字字符放到数组中
+
+for(let i=0;i<str.length;i++){
+      if(!isNaN(parseInt(str[i]))){//不是NaN就是数字
+          ary.push(str[i]);
+      }
+}
+
+console.log(ary);
+    </script>
+</body>
+</html>
