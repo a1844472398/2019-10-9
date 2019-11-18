@@ -185,6 +185,107 @@
 //     }
 //     return temp;
 //   }))
+
+
+
+
+//  var x = 3;
+//  obj = {x:5};
+//  obj.fn = (function (){
+//    this.x *= ++x;
+//    return function(y){
+//      this.x *=(++x)+y;
+//      console.log(x);
+//    }
+//  })();
+//  var fn = obj.fn;
+//  obj.fn(6);
+//  fn(4);
+//  console.log(obj.x,x);
+
+// function Fn() {
+//     this.x = 10;
+//     this.y = 20;
+//     this.getX = function () {
+//         console.log(this.x);
+//     }
+// }
+// Fn.prototype.y=40;
+// Fn.prototype={
+//     x:30,
+//     getY:function(){
+//         this.y+=1;
+//         console.log(this.y);
+//     },
+//     sum:function(){
+//         console.log(this.x+this.y);
+//     }
+// };
+// let f1 = new Fn;
+// let f2 = new Fn;
+// console.log(f1.getX === f2.getX);
+// console.log(f1.getY === f2.getY);
+// console.log(f1.constructor);
+// f1.getX();
+// f2.getY();
+// f1.sum();
+
+// function a(){alert(1);}
+// function fn(){
+//   a=function(){
+//     alert(2);
+//   };
+//   return this;
+// }
+// fn.a=a;
+// fn.prototype={
+//   a:()=>{
+//     alert(3);
+//   }
+// };
+// a();1
+// fn.a();1
+// fn().a();2
+// new fn.a();1
+// new fn().a();3
+// new new fn().a();
+
+
+// var name = 'WINDOW',
+// obj = {
+//   name:"OBJ",
+//   fn:(function(){
+//     console.log(this.name);
+//     return function(){
+//       console.log(this.name);
+//     }
+//   })()
+// },
+// fn=()=>{
+//   console.log(this.name);
+// };
+// fn();
+// obj.fn();
+// fn.call(obj);
+
+
+
+function a1(name){
+  this.name = name;
+}
+function a2(name){
+  this.name = name||'Jerry';
+}
+
+ 
+function a3(naem){
+  name && (this.name = name);
+}
+a1.prototype.name = 'tom';
+a2.prototype.name = 'tom';
+a3.prototype.name = 'tom';
+alert((new a1().name)+(new a2().name)+(new a3().name));
+
   </script>
 </body>
 

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:100px;
+    height:50px;
+    font-size:20px;
+    background: red;
+    color:#fff;
+    position: absolute;
+    right:0;
+    top:100%;
+    text-align: center;
+    line-height:50px;
+    cursor: pointer;
+}
+body{
+    height:3000px;
+    overflow: hidden;
+}
+</style>
+</head>
+<body>
+    <div id="box">回到顶部</div>
+<script>
+
+    const {offsetTop} = box;//610
+    onscroll = function(){
+        let {scrollTop} = document.documentElement;
+        if(offsetTop <= scrollTop){
+            box.style.position = 'fixed';
+            box.style.top = '50%';
+        }else{
+            box.style.position = 'absolute';
+            box.style.top = '100%';
+        }
+    }
+
+    box.onclick = function(){
+        document.documentElement.scrollTop = 0;
+    }
+
+</script>
+</body>
+</html>
