@@ -44,7 +44,7 @@
     const {log} = console;
     fetch('./json/product.json')
     .then(a=>a.json())
-    .then(data=>{
+    .then(data=>{ 
          let dataCopy = data.slice();
          log(dataCopy)
          function render(arr){
