@@ -9,7 +9,10 @@
 </head>
 
 <body>
-  <div id="box"></div>
+
+  <!-- <button>发送</button> -->
+  <input type="text"/>
+  <ul></ul>
   <script>
     // let w ='100px';
     // let h = '100px';
@@ -269,24 +272,22 @@
 // fn.call(obj);
 
 
+// $(':button').click(function(){
+//   let val = $(':text').val();
+//   $('ul').html()
+// })
 
-function a1(name){
-  this.name = name;
-}
-function a2(name){
-  this.name = name||'Jerry';
-}
-
- 
-function a3(naem){
-  name && (this.name = name);
-}
-a1.prototype.name = 'tom';
-a2.prototype.name = 'tom';
-a3.prototype.name = 'tom';
-alert((new a1().name)+(new a2().name)+(new a3().name));
-
+$(':button:eq(0)').click(function(){
+  $(':button:eq(1)').attr('checked',true);
+})
+$(':button:eq(1)').click(function(){
+  $(':checkbox').attr(':checked',false);
+})
+$(':button:eq(2)').click(function(){
+  console.log($(':checkbox').prop('checked'))
+})
   </script>
 </body>
 
-</html>
+</html> 
+ 
