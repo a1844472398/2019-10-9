@@ -12,7 +12,7 @@
         <header id="head">
             <div id="top">
                 <h1 class="title">
-                    <a href="" title="妙味云盘"><img src="./img/mouse.png" alt=""> </a>
+                    <a href="" title=""><img src="./img/mouse.png" alt=""> </a>
                 </h1>
                 <div class="right">
                     <div class="user">
@@ -32,9 +32,9 @@
                     <li id="del"><i></i>删除</li>
                     <li id="create"><i></i>新建文件夹</li>
                     <li><i></i></li>
-                </ul> 
+                </ul>
                 <div class="nav_right">
-0                    <div class="show_mode"></div>  
+                    <div class="show_mode"></div>
                     <div class="sort_mode">
                         <i></i>
                         <div class="cover"></div>
@@ -57,7 +57,6 @@
                         <ul>
                             <li>
                                 <div class="tree-title tree-ico close">
-                                
                                     <span><i></i>我的文档</span>
                                 </div>
                             </li>
@@ -214,16 +213,16 @@
         </div>
     </div>
     <script src="js/sql/data.js"></script>
-    
-
-   
-    <!-- <script src="js/tree.js"></script> -->
-    
-
+    <script src="js/jquery.min.js"></script>
+    <script src="js/tools.js"></script>
+    <script src="js/breadmenu/breadmenu.js"></script>
+    <script src="js/folders/folders.js"></script>
+    <script src="js/navleft/navleft.js"></script>
     <script>
         /*
-        如果你把云做好，你就走进了顺利就业的那30%的人群中。
-    */
+            如果你把云做好，你就走进了顺利就业的那20%的人群中。
+            70%
+        */
         /*
             [
                 {
@@ -236,7 +235,10 @@
                         {
                             name:'我的文档'，
                             children:[
-                                {},{},{}
+                                {
+                                    name:'我的资源',
+                                    children:[]
+                                },{},{}
                             ]
                         }
                     ]
@@ -257,15 +259,28 @@
                 "2":{
                     id:2,
                     name:'我的文档',
-                    id:0
+                    pid:0
                 },
                 "3":{
                     id:3,
                     name:'我的爱好',
-                    pid:0
+                    pid:2
+                },
+                "4":{
+                    id:4,
+                    name:'我的小心情',
+                    pid:3
                 }
             }
         */
+        
+        /*
+            MVC:
+                M -> Model    数据
+                V -> View     视图
+                C -> controller  控制器
+        */
+
     </script>
 </body>
 
