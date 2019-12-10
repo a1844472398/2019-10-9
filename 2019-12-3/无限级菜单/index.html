@@ -132,23 +132,23 @@
 						<div>${item.title}</div>
 						${item.child?`<ul>${render(item.child)}</ul>`:''}
 					</li>
-				`;
+				`; 
 			});
 			return temp;
 		}
 		// console.log(render(d))
-		oUl.innerHTML = render(d);
-
+		oUl.innerHTML = render(d);  
 
 		oUl.onclick = function(ev){
 			//点击的元素是否为div
+
 			if(ev.target.tagName === 'DIV'){
 				//div下有木有ul
 				let ul = ev.target.nextElementSibling;
 				//如果有ul就让ul打开
 				if(ul){
 					//通过classList.toggle去判断是否当前添加line
-					let b = ul.parentNode.children[0].classList.toggle('line');
+					let b  = ul.parentNode.children[0].classList.toggle('line');
 					// ul.style.display = b?'block':'none';
 					if(b){
 						ul.style.display = 'block';

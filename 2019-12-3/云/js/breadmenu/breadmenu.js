@@ -27,13 +27,12 @@ function createMenu(id){
             // console.log(tools.getChild(data,3));
             //每点击一次面包屑按钮都把全选的数据清除一次
             tools.getChild(data,id).forEach(item=>item.checked = false);
-            render(item.id);
-            createMenu(item.id);
         });
         $breadnNav.append($navChild);
     });
 }
 createMenu(0);
+
 
 
 

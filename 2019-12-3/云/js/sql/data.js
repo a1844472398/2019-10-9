@@ -43,6 +43,7 @@ var data = {
         "title": "js程序设计",
         "checked":false
     },
+
     "4000": {
         "id": 4000,
         "pid": 3,
@@ -50,9 +51,10 @@ var data = {
         "checked":false
     },
     "23333": {
-        "id": 23333,
+        "id": 23333, 
         "pid": 2,
         "title": "王杰",
+
         "checked":false
     },
     "29000": {
@@ -62,11 +64,13 @@ var data = {
         "checked":false
     },
     "244444": {
+
         "id": 244444,
         "pid": 2,
         "title": "张国荣",
         "checked":false
     },
+    
     "30":{
         id:30,
         pid:244444,
@@ -76,19 +80,3 @@ var data = {
 }
 
 
-
-// let arr = [
-//     {
-//         id:'0',
-//         title:'我的文档'
-//     },
-//     {
-//         id:'1',
-//         title:'我的音乐',
-//         child:[
-//             {
-//                 child:[]
-//             }
-//         ]
-//     }
-// ]
