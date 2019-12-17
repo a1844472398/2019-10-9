@@ -35,7 +35,8 @@ app.use('/get', get);
 app.use('/post',post);
 app.use('/sleep',sleep);
 app.use('/player',player);
-
+ 
+ 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
