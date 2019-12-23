@@ -21,13 +21,14 @@ fetch('./data.json')
 fetch('/get?page=3')
 
 ### Node
-    Node是基于chromeV8引擎，能够让js运行在服务端，通过npm去下载功能模块包
+    Node是基于chromeV8引擎，能够让js运行在服务端，通过npm去下载功能模块包 
     js 能够写前端也能写后端，是真正实现前后统一的全栈工程师
     webpack
 
-    Deno
+ 
+    Deno  
 
-
+ 
 + Node的特性
     - 单线程
     - 非阻塞I/O
@@ -40,7 +41,7 @@ fetch('/get?page=3')
 
 + NodeJS使用的是commonjs规范(AMD规范 requirejs  CMD sea.js)
     - 引入
-        require('文件') -> 返回值是一个对象，可以通过解构的方式拿到想要的模块
+         require('文件') -> 返回值是一个对象，可以通过解构的方式拿到想要的模块
         不加路径的情况:
             - node自带模块
             - node_modules中的模块
