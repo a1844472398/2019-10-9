@@ -130,7 +130,8 @@ const app = http.createServer((req,res)=>{
                 }else{
                     let json2 = JSON.stringify({
                         code:1,
-                        ary:[5,4,3,2,1]
+                        ary:[5,4,3,2,1] 
+                        
                     })
                     res.end(o.callback+'('+ json2 +')');
                 }
@@ -142,6 +143,7 @@ const app = http.createServer((req,res)=>{
     }
 
     // console.log( qs.parse( (urlModel.parse(req.url).query)) );
+
     // res.writeHead(200, {'Content-Type': 'text/html'});    
     // res.end(JSON.stringify({name:'哈哈'}));
 });
