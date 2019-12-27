@@ -34,7 +34,7 @@ img{
     file.onchange = function(){
         let fr = new FileReader;
         fr.readAsDataURL(this.files[0]); 
-        ary.push(this.files[0])
+        ary.push(this.files[0]) 
         fr.onload = function(ev){
             let img = new Image;
             img.src = ev.target.result;
