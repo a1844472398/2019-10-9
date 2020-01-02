@@ -15,49 +15,62 @@
                 <input 
                     class="new-todo" 
                     placeholder="请输入内容" 
+                    v-model='valin'
+                    @keyup.13='add'
                 >
             </header>
             <section class="main">
-                <input class="toggle-all" type="checkbox" >
+                <input class="toggle-all" type="checkbox" 
+                    v-model="allonoff" 
+                    @click="all"
+                >
                 <ul class="todo-list">
-                    <li class="active">
-                        <div class="view">
-                            <input class="toggle" type="checkbox" >
-                            <label>哈哈哈</label>
-                            <button class="destroy"></button>
+                    <li 
+                        :class="{editing:val.onoff===true,completed:val.checked===true}" 
+                        v-for="(val,key) in setAry" 
+                        ref="li"
+                    >
+                        <div class="view" v-show="!val.onoff">
+                            <input class="toggle" type="checkbox" 
+                                :value="checkall" 
+                                v-model="val.checked"
+                            >
+                            <label @dblclick="dbclk(val,key)">{{val.txt}}</label>
+                            <button class="destroy" @click="del(key)"></button>
                         </div>
-                        <input 
-                            class="edit" 
+                        <input
+                            class="edit"
+                            value="val.txt"
+                            v-model="changetxt"
+                            ref="input"
+                            @blur="blur(val,$event)"
+                            @keyup.esc="esc(val)"
                         />
                     </li>
                 </ul>
             </section>
             <footer class="footer">
 	            <span class="todo-count">
-	            	<strong>0</strong>
+	            	<strong>{{sel}}</strong>
 	            	<span>条未选中</span>
                 </span>
-                <ul 
-                    class="filters"
-                >
+                <ul class="filters">
                     <li>
-                        <a 
-                            href="#/all" 
-                            class="selected"
-                           
+                        <a  href="#/all" 
+                            :class="a==0?'selected':''"
+                            @click="filters(0)"
                         >全部</a>
                     </li>
                     <li>
-                        <a 
-                            href="#/unchecked" 
-                            
-                            class=""
+                        <a  href="#/unchecked" 
+                            :class="a==1?'selected':''"
+                            @click="filters(1)"
                         >未选中</a>
                     </li>
                     <li>
-                        <a 
-                            href="#/checked"
-                            class=""
+                        <a  href="#/checked"
+                            :class="a==2?'selected':''"
+                            @click="filters(2)"
                         >已选中</a>
                     </li>
                 </ul>
@@ -66,15 +79,18 @@
     </section>
 <script src="../../vue.js"></script>
 <script>
-    // editing completed
-    // editing ''
-    // ''
-    //completed
- 
+    //editing ：双击切换li显示的class名
+    //completed ：删除线的class名
+
     new Vue({
         el:'.todoapp',
         data:{ 
-            ary:[
+            valin:'', 
+            changetxt:'', 
+            allonoff:false, 
+            a:'0',
+            isblur:false, 
+            ary:[ 
                 {
                     id:0,
                     txt:'哈哈',
@@ -89,10 +105,73 @@
                 }
             ]
         },
+        computed:{
+            sel(){
+                let {ary} = this;
+                return ary.filter((e)=>e.checked === false).length
+            },
+            setAry(){
+                const {a,ary} = this;
+                return ary.filter((e,i)=>{
+                    switch(a){
+                        case 0:
+                            return e;
+                        case 1:
+                            return e.checked === false; 
+                        case 2:
+                            return e.checked === true;
+                        default:
+                            return e;
+                    }
+                })
+            },
+            checkall(){
+                const {ary} = this;
+                this.allonoff = ary.every((e)=>e.checked === true);
+                return this.allonoff;
+            },
+        },
         methods:{
-
-        }
-            
+            add(){
+                if(this.valin==='') return
+                this.ary.unshift({
+                    id:new Date,
+                    txt:this.valin,
+                    checked:false,
+                    onoff:false
+                });
+                this.valin='';
+            },
+            dbclk(val,key){
+                val.onoff = true;
+                this.changetxt = val.txt;
+                this.$nextTick((x) => {
+                    this.$refs.input[key].select();
+                })
+            },
+            blur(val,ev){
+                if(this.isblur) return
+                val.txt=this.changetxt;
+                val.onoff = false;
+            },
+            esc(val){
+                this.isblur = true;
+                setTimeout(()=>{
+                    this.isblur = false
+                },100)
+                val.onoff = false;
+            },
+            all(){
+                this.allonoff = !this.allonoff;
+                this.ary.map(i=>i.checked=this.allonoff)
+            },
+            del(key){
+                this.ary = this.ary.filter((e,i)=>i!==key)
+            },
+            filters(a){
+                this.a = a;
+            }, 
+        } 
     })
 </script>
 </body>
