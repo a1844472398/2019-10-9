@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+.box{
+    width:100px;
+    height: 100px;
+    background: hotpink;
+}
+
+.box2{
+    width:100px;
+    height: 100px;
+    background:skyblue;
+}
+
+</style>
+</head>
+<body>
+    <div id="app">
+        <ppa>
+            <div class="box2">世界</div>
+        </ppa>
+    </div>
+
+    <template id="ppa">
+        <div>
+            <slot>
+                <div class="box"></div>
+            </slot>
+        </div>
+       
+    </template>
+<script src="vue.js"></script>
+<script>
+
+    const ppa = {
+        template:'#ppa'
+    }
+
+
+    new Vue({
+        el:'#app',
+        components:{
+            ppa
+        }
+    })
+</script>
+</body>
+</html>
